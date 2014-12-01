@@ -1,83 +1,84 @@
-\chapter{Dise\~no e implementaci\'on}\label{CAP:Disenoimplementacion}
-En este cap\'itulo se comentar\'an los aspectos m\'as relevantes del dise\~no e implementaci\'on del sistema realizado, siendo la parte central de esta memoria.\\ 
+\chapter{Diseño e implementación}
+\label{CAP:Disenoimplementacion}
+En este capítulo se comentarán los aspectos más relevantes del diseño e implementación del sistema realizado, siendo la parte central de esta memoria.\\ 
 
-\section{Introducci\'on}
-En ingenier\'ia del software el t\'ermino fases del desarrollo expresa c\'omo ha progresado el desarrollo de un software y cu\'anto desarrollo ha sido requerido. Cada versi\'on importante de un producto pasa generalmente a trav\'es de una etapa en la que se agregan las nuevas caracter\'isticas (etapa alfa), despu\'es una etapa donde se eliminan errores activamente (etapa beta), y finalmente una etapa donde se han quitado todos los \textit{bugs} \footnote[1]{\textit{Bug} es un error de software que desencadena un resultado indeseado.} importantes (etapa estable). Las etapas intermedias pueden tambi\'en ser reconocidas.\\
+\section{Introducción}
+En ingeniería del software el término fases del desarrollo expresa cómo ha progresado el desarrollo de un software y cuánto desarrollo ha sido requerido. Cada versión importante de un producto pasa generalmente a través de una etapa en la que se agregan las nuevas características (etapa alfa), después una etapa donde se eliminan errores activamente (etapa beta), y finalmente una etapa donde se han quitado todos los \textit{bugs}\footnote{\textit{Bug} es un error de software que desencadena un resultado indeseado.} importantes (etapa estable). Las etapas intermedias pueden también ser reconocidas.\\
 
-Las etapas se pueden anunciar y regular formalmente por los desarrolladores del producto, pero los t\'erminos se utilizan a veces de manera informal para describir el estado de un producto. Normalmente muchas compa\~n\'ias usan nombres en clave para las versiones antes del lanzamiento de un producto, aunque el producto y las caracter\'isticas reales son raramente secretas.\\
+Las etapas se pueden anunciar y regular formalmente por los desarrolladores del producto, pero los términos se utilizan a veces de manera informal para describir el estado de un producto. Normalmente muchas compañías usan nombres en clave para las versiones antes del lanzamiento de un producto, aunque el producto y las características reales son raramente secretas.\\
 
 \begin{figure}[htbp]
 	
 	\centering
 	\includegraphics[scale=0.5]{./Figuras/ingenieriadelsw.jpg}
-	\caption{Ingenier\'ia del \textit{Software}.}
+	\caption{Sopa de letras con conceptos importantes en la Ingeniería del \textit{Software}.}
 	\label{fig:ingSW}
 	
 \end{figure}
 
-Para comenzar un proyecto en ingenier\'ia de software, debemos saber de manera clara qu\'e necesidades se pretenden cubrir con el resultado final. De igual modo, para el desarrollo de este tipo de proyectos se realizan una serie de tareas entre la idea inicial y el producto final. Ese desarrollo sigue una determinada metodolog\'ia o modelo de desarrollo, el cual establece el orden en el que se llevan a cabo las tareas en el proyecto y provee de requisitos de entrada y salida para cada una de las actividades.\\
+Para comenzar un proyecto en ingeniería de software, debemos saber de manera clara qué necesidades se pretenden cubrir con el resultado final. De igual modo, para el desarrollo de este tipo de proyectos se realizan una serie de tareas entre la idea inicial y el producto final. Ese desarrollo sigue una determinada metodología o modelo de desarrollo, el cual establece el orden en el que se llevan a cabo las tareas en el proyecto y provee de requisitos de entrada y salida para cada una de las actividades.\\
 
 \section{Modelo de desarrollo}
-En ingenier\'ia del software el desarrollo en cascada o modelo en cascada  \footnote[1] {Denominado as\'i por la posici\'on de las fases en el desarrollo de esta, que parecen caer en cascada \"por gravedad\" hacia las siguientes fases}, es el enfoque metodol\'ogico que ordena rigurosamente las etapas del proceso para el desarrollo de software, de tal forma que el inicio de cada etapa debe esperar a la finalizaci\'on de la etapa anterior. Al final de cada etapa, el modelo est\'a dise\~nado para llevar a cabo una revisi\'on final, que se encarga de determinar si el proyecto est\'a listo para avanzar a la siguiente fase. Este modelo fue el primero en originarse y es la base de todos los dem\'as modelos de ciclo de vida.\\
+En ingeniería del software el desarrollo en cascada o modelo en cascada\footnote{Denominado así por la posición de las fases en el desarrollo de esta, que parecen caer en cascada ``por gravedad'' hacia las siguientes fases}, es el enfoque metodológico que ordena rigurosamente las etapas del proceso para el desarrollo de software, de tal forma que el inicio de cada etapa debe esperar a la finalización de la etapa anterior. Al final de cada etapa, el modelo está diseñado para llevar a cabo una revisión final, que se encarga de determinar si el proyecto está listo para avanzar a la siguiente fase. Este modelo fue el primero en originarse y es la base de todos los demás modelos de ciclo de vida.\\
 
-La versi\'on original fue propuesta por \textit{Winston W. Royce} en 1970 y posteriormente revisada por \textit{Barry Boehm} en 1980 e \textit{Ian Sommerville} en 1985. Un ejemplo de una metodolog\'ia de desarrollo en cascada es:
+La versión original fue propuesta por \textit{Winston W. Royce} en 1970 y posteriormente revisada por \textit{Barry Boehm} en 1980 e \textit{Ian Sommerville} en 1985. Un ejemplo de una metodología de desarrollo en cascada es:
 
 \begin{itemize}
 	
-\item An\'alisis de requisitos
-\item Dise\~no del sistema
-\item Dise\~no del programa
-\item Codificaci\'on
+\item Análisis de requisitos
+\item Diseño del sistema
+\item Diseño del programa
+\item Codificación
 \item Pruebas
-\item Implantaci\'on
+\item Implantación
 \item Mantenimiento
 
 \end{itemize}
 
-De esta forma, cualquier error de dise\~no detectado en la etapa de prueba conduce necesariamente al redise\~no y nueva programaci\'on del c\'odigo afectado, aumentando los costos del desarrollo. La palabra cascada sugiere, mediante la met\'afora de la fuerza de la gravedad, el esfuerzo necesario para introducir un cambio en las fases m\'as avanzadas de un proyecto. Si bien ha sido ampliamente criticado desde el \'ambito acad\'emico y la industria, sigue siendo el paradigma m\'as seguido a d\'ia de hoy.\\
+De esta forma, cualquier error de diseño detectado en la etapa de prueba conduce necesariamente al rediseño y nueva programación del código afectado, aumentando los costos del desarrollo. La palabra cascada sugiere, mediante la metáfora de la fuerza de la gravedad, el esfuerzo necesario para introducir un cambio en las fases más avanzadas de un proyecto. Si bien ha sido ampliamente criticado desde el ámbito académico y la industria, sigue siendo el paradigma más seguido a día de hoy.\\
 
-Como ya se explic\'o en episodios anteriores, el fin de la aplicaci\'on web "TuErasmus", es la de una web colaborativa para alumnos de la ETSIT, y donde est\'e a su disposici\'on toda la informaci\'on necesaria de manera f\'acil, r\'apida y sencilla de todas las universidades que forman parte del programa Erasmus. Por tanto, comenzamos por estudiar y analizar qu\'e cosas hay que tener en cuenta para el desarrollo, y a definir los distintos m\'odulos que debemos implementar, dise\~nando cuidadosamente el sistema, tanto para la parte del servidor como para la parte del cliente.\\  
+Como ya se explicó en episodios anteriores, el fin de la aplicación web \texttt{TuErasmus}, es la de una web colaborativa para alumnos de la ETSIT, y donde esté a su disposición toda la información necesaria de manera fácil, rápida y sencilla de todas las universidades que forman parte del programa Erasmus. Por tanto, comenzamos por estudiar y analizar qué cosas hay que tener en cuenta para el desarrollo, y a definir los distintos módulos que debemos implementar, diseñando cuidadosamente el sistema, tanto para la parte del servidor como para la parte del cliente.\\  
 
 \section{Objetivos}
-Para poder llevar a cabo el desarrollo de la aplicaci\'on, en primer lugar se deben definir una serie de objetivos que dar\'an nombre a los hitos que se ir\'an cumpliendo gradualmente para llegar al conjunto final.\\
+Para poder llevar a cabo el desarrollo de la aplicación, en primer lugar se deben definir una serie de objetivos que darán nombre a los hitos que se irán cumpliendo gradualmente para llegar al conjunto final.\\
 
 \subsubsection{Conocimientos adquiridos}
-Este proyecto puede tomarse como una manera de profundizar y adquirir conocimientos en las nuevas tecnolog\'ias de desarrollo de aplicaciones web. Dichas tecnolog\'ias son el presente y el futuro cercano del desarrollo web, por lo que tener una base s\'olida de cara a entrar en el mercado laboral resulta un objetivo primordial.\\
+Este proyecto puede tomarse como una manera de profundizar y adquirir conocimientos en las nuevas tecnologías de desarrollo de aplicaciones web. Dichas tecnologías son el presente y el futuro cercano del desarrollo web, por lo que tener una base sólida de cara a entrar en el mercado laboral resulta un objetivo primordial.\\
 
-En primer lugar, quer\'ia obtener una experiencia mayor con el desarrollo web usando tecnolog\'ias vistas superficialmente en la carrera, as\'i como aprender e investigar sobre nuevas tecnolog\'ias. Una vez realizado el apartado de la documentaci\'on de todos los recursos que iba a usar me dediqu\'e a definir el dise\~no y p\'aginas que compond\'ian la aplicaci\'on web, \Â¿cu\'ales ser\'ian las p\'aginas p\'ublicas? \Â¿cu\'ales ser\'ian las p\'aginas privadas? \Â¿qu\'e tipo de informaci\'on se iba a gestionar? \Â¿a qu\'e tipo de usuarios estaba dirigida la aplicaci\'on web?\\
+En primer lugar, quería obtener una experiencia mayor con el desarrollo web usando tecnologías vistas superficialmente en la carrera, así como aprender e investigar sobre nuevas tecnologías. Una vez realizado el apartado de la documentación de todos los recursos que iba a usar me dediqué a definir el diseño y páginas que compondrían la aplicación web, ¿cuáles serían las páginas públicas?¿cuáles serían las páginas privadas?, ¿qué tipo de información se iba a gestionar?, y ¿a qué tipo de usuarios estaba dirigida la aplicación web?\\
 
-Con unas respuestas coherentes y razonables a todas las preguntas lanzadas comenc\'e a sumergirme en el mundo de la programaci\'on, de los m\'etodos, de las variables locales y globales... de todo aquello que te envuelve a la hora de programar.\\
+Con unas respuestas coherentes y razonables a todas las preguntas lanzadas comencé a sumergirme en el mundo de la programación, de los métodos, de las variables locales y globales... de todo aquello que te envuelve a la hora de programar.\\
 
 \subsubsection{Requisitos}
-El proyecto deb\'ia cumplir ciertos requisitos b\'asicos, que enumero a continuaci\'on.
+El proyecto debía cumplir ciertos requisitos básicos, que enumero a continuación.
 
 \begin{itemize}
-	\item \textbf{Usar las nuevas tecnolog\'ias HTML5, CSS3}: Tecnolog\'ias bastante integradas en el mundo laboral hoy en d\'ia, con lo que es un punto a favor el tener un manejo de ellas y el conocimiento suficiente para poder incluirlas en el trabajo del futuro.
-	\item \textbf{Integrar JavaScript en la parte del usuario}: \textbf{Rapidez}, estando en el lado del cliente permite que muchas funciones del c\'odigo se ejecuten sin tener que contactar con el servidor y esperar una respuesta; \textbf{Simplicidad}, relativamente f\'acil de aprender y poner en pr\'actica; \textbf{Versatilidad}, juega muy bien con otros idiomas y se puede utilizar en una gran variedad de aplicaciones. Estar del lado del cliente reduce la demanda en el servidor.
-	\item \textbf{Integrar la API de Google Maps}: Conjunto de API que permiten superponer datos propios sobre un mapa de Google Maps personalizado. Le da un atractivo a las aplicaciones web  y con la cobertura global m\'as precisa del mundo y una comunidad de mapas activa que incorpora actualizaciones diarias, los usuarios se beneficiar\'an de un servicio que mejora constantemente.
-	\item \textbf{Gestionar de manera \'optima la informaci\'on de la aplicaci\'on}: Es el objetivo principal de la aplicaci\'on, jugar con informaci\'on de una manera divertida, din\'amica y donde poder interactuar con otros usuarios.
-	\item \textbf{Ofrecer una experiencia de usuario atractiva y sencilla}: Con CSS3 y HTML5 se pretende dotar a la aplicaci\'on con una imagen actual, moderna, intuitiva y que permitiese un uso agradable.
+	\item \textbf{Usar las nuevas tecnologías HTML5, CSS3}: Tecnologías bastante integradas en el mundo laboral hoy en día, con lo que es un punto a favor el tener un manejo de ellas y el conocimiento suficiente para poder incluirlas en el trabajo del futuro.
+	\item \textbf{Integrar JavaScript en la parte del usuario}: \textbf{Rapidez}, estando en el lado del cliente permite que muchas funciones del código se ejecuten sin tener que contactar con el servidor y esperar una respuesta; \textbf{Simplicidad}, relativamente fácil de aprender y poner en práctica; \textbf{Versatilidad}, juega muy bien con otros idiomas y se puede utilizar en una gran variedad de aplicaciones. Estar del lado del cliente reduce la demanda en el servidor.
+	\item \textbf{Integrar la API de Google Maps}: Conjunto de API que permiten superponer datos propios sobre un mapa de Google Maps personalizado. Le da un atractivo a las aplicaciones web  y con la cobertura global más precisa del mundo y una comunidad de mapas activa que incorpora actualizaciones diarias, los usuarios se beneficiarán de un servicio que mejora constantemente.
+	\item \textbf{Gestionar de manera óptima la información de la aplicación}: Es el objetivo principal de la aplicación, jugar con información de una manera divertida, dinámica y donde poder interactuar con otros usuarios.
+	\item \textbf{Ofrecer una experiencia de usuario atractiva y sencilla}: Con CSS3 y HTML5 se pretende dotar a la aplicación con una imagen actual, moderna, intuitiva y que permitiese un uso agradable.
 \end{itemize}
 
 \section{Etapas del desarrollo}
-\subsection{Documentaci\'on}
-Como primera etapa de desarrollo, como en cualquier proyecto, lo que se debe hacer para comenzar a trabajar en un proyecto es documentarse sobre las herramientas y tecnolog\'ias que se quieran usar. Esta etapa me llev\'o su tiempo, ya que muchas de las tecnolog\'ias usadas no las conoc\'ia en profundidad, por lo que tuve que hacer un estudio espec\'ifico de varios conceptos. Una vez revisada la documentaci\'on comenc\'e a definir el esqueleto de lo que ser\'ia mi aplicaci\'on web.\\
+\subsection{Documentación}
+Como primera etapa de desarrollo, como en cualquier proyecto, lo que se debe hacer para comenzar a trabajar en un proyecto es documentarse sobre las herramientas y tecnologías que se quieran usar. Esta etapa me llevó su tiempo, ya que muchas de las tecnologías usadas no las conocía en profundidad, por lo que tuve que hacer un estudio específico de varios conceptos. Una vez revisada la documentación comencé a definir el esqueleto de lo que sería mi aplicación web.\\
 
-Previamente, se instalaron los frameworks de Django y Bootstrap para el apartado del dise\~no de la interfaz de usuario. Una vez instalados ambos entornos de desarrollo, Bootstrap se deb\'ia integrar en el proyecto Django para poder dar el estilo a las p\'aginas de la herramienta web.\\
+Previamente, se instalaron los \emph{frameworks} de Django y Bootstrap para el apartado del diseño de la interfaz de usuario. Una vez instalados ambos entornos de desarrollo, Bootstrap se debía integrar en el proyecto Django para poder dar el estilo a las páginas de la herramienta web.\\
 
-\subsection{Dise\~no de la base de datos}
-Ya funcionando los entornos, con sus configuraciones adecuadas, comenc\'e a trabajar con el pilar de la aplicaci\'on, \textbf{la base de datos}.\\
+\subsection{Diseño de la base de datos}
+Ya funcionando los entornos, con sus configuraciones adecuadas, comencé a trabajar con el pilar de la aplicación, \textbf{la base de datos}.\\
 
-Quer\'ia que los usuarios a trav\'es de la aplicaci\'on fuesen capaces de registrarse, loguearse, cerrar sus sesiones, registrar perfiles de universidades, documentar las distintas universidade, acceder a los datos de los diversos usuarios... Ten\'ian que estar claramente definidas las tablas que formar\'ian dicha base de datos, para a posteriori poder hacer un buen uso de todos los datos que ofrecer\'ia la web.\\
+Quería que los usuarios a través de la aplicación fuesen capaces de registrarse, \emph{loguearse}, cerrar sus sesiones, registrar perfiles de universidades, documentar las distintas universidades, acceder a los datos de los diversos usuarios... Tenían que estar claramente definidas las tablas que formarían dicha base de datos, para a posteriori poder hacer un buen uso de todos los datos que ofrecería la web.\\
 
-Existen tres tablas con informaci\'on de los usuarios: \textit{Users}, \textit{UserProfile} y \textit{UsersUniversity}. Donde encontramos los datos m\'as importantes de los usuarios, nombre, correo electr\'onico, la universidad erasmus en la que estudi\'o...\\
+Existen tres tablas con información de los usuarios: \textit{Users}, \textit{UserProfile} y \textit{UsersUniversity}. Donde encontramos los datos más importantes de los usuarios, nombre, correo electrónico, la universidad Erasmus en la que estudió...\\
 
-En cuanto a las universidades encontramos un mayor n\'umero de tablas: \textit{University}, \textit{InfoBasic}, \textit{InfoGeneral}, \textit{InfoResidences}, \textit{InfoSubjects}, \textit{InfoCities}, \textit{Universities}. En estas tablas, encontramos la informaci\'on correspondietne a las residencias de cada universidad, la ciudad(con toda la informaci\'on relacionada) de una universidad, el conjunto de asignaturas de una universidad, los datos principales de cada una de las universidades, la informaci\'on espec\'ifica de la beca erasmus de una universidad.\\
+En cuanto a las universidades encontramos un mayor número de tablas: \textit{University}, \textit{InfoBasic}, \textit{InfoGeneral}, \textit{InfoResidences}, \textit{InfoSubjects}, \textit{InfoCities}, \textit{Universities}. En estas tablas, encontramos la información correspondiente a las residencias de cada universidad, la ciudad(con toda la información relacionada) de una universidad, el conjunto de asignaturas de una universidad, los datos principales de cada una de las universidades, la información específica de la beca Erasmus de una universidad.\\
 
-Adem\'as de estas tablas, que son las m\'as importantes, existen otras que recogen datos gen\'ericos a las anteriormente enumeradas, y que optimizan la gesti\'on de datos.\\
+Además de estas tablas, que son las más importantes, existen otras que recogen datos genéricos a las anteriormente enumeradas, y que optimizan la gestión de datos.\\
 
-\subsection{Creaci\'on del registro de usuarios}
-\textbf{TuErasmus} iba tomando la forma de una comunidad de estudiantes erasmus. Por lo que esto implicaba un control de usuarios de la aplicaci\'on web. De este modo comienza a implementarse la parte del registro, login y logout de los miembros de la web.\\
+\subsection{Creación del registro de usuarios}
+\textbf{TuErasmus} iba tomando la forma de una comunidad de estudiantes Erasmus. Por lo que esto implicaba un control de usuarios de la aplicación web. De este modo comienza a implementarse la parte del registro, login y logout de los miembros de la web.\\
 
 \begin{figure}[htbp]
 	
@@ -88,7 +89,7 @@ Adem\'as de estas tablas, que son las m\'as importantes, existen otras que recog
 	
 \end{figure}
 
-En caso de introducir correctamente o err\'oneamente los datos en el formulario del registro nos aparecen unos mensajes indicando si hemos conseguido el registro de manera exitosa.\\
+En caso de introducir correctamente o erróneamente los datos en el formulario del registro nos aparecen unos mensajes indicando si hemos conseguido el registro de manera exitosa.\\
 
 \begin{figure}[htbp]
 	
@@ -108,7 +109,7 @@ En caso de introducir correctamente o err\'oneamente los datos en el formulario 
 	
 \end{figure}
 
-Los datos que se solicitan en este formulario son el nickname que tendr\'a ese usuario en la web, el correo electr\'onico para contactar en caso de ser necesario, si es alumno o profesor, ya que dependiendo de uno u otro, las asignaturas y comentarios ser\'an distintos, si eres chico o chica, sobre todo para la imagen que aparecer\'a en el perfil inicial del usuario por defecto. Estos datos por supuesto podr\'an ser modificados desde una de las interfaces de la aplicaci\'on donde se facilita un formulario permitiendo la modificaci\'on de los perfiles de usuario.\\
+Los datos que se solicitan en este formulario son el \texttt{nickname} que tendrá ese usuario en la web, el correo electrónico para contactar en caso de ser necesario, si es alumno o profesor, ya que dependiendo de uno u otro, las asignaturas y comentarios serán distintos, si eres chico o chica, sobre todo para la imagen que aparecerá en el perfil inicial del usuario por defecto. Estos datos por supuesto podrán ser modificados desde una de las interfaces de la aplicación donde se facilita un formulario permitiendo la modificación de los perfiles de usuario.\\
 
 \begin{figure}[htbp]
 	
@@ -128,10 +129,10 @@ Los datos que se solicitan en este formulario son el nickname que tendr\'a ese u
 	
 \end{figure}
 
-El hecho de tener que loguearse implica tener unos privilegios en cuanto al uso de la aplicaci\'on y a las ventajas de disponer de la informaci\'on acerca de las distintas universidades erasmus. Una vez logueados los usuarios, la navegaci\'on ser\'a por todo el conjunto de p\'aginas que forman la aplicaci\'on.\\
+El hecho de tener que \emph{loguearse} implica tener unos privilegios en cuanto al uso de la aplicación y a las ventajas de disponer de la información acerca de las distintas universidades Erasmus. Una vez \emph{logueados} los usuarios, la navegación será por todo el conjunto de páginas que forman la aplicación.\\
 
-\subsection{Creaci\'on de perfiles de universidades}
-Ya implementado el m\'etodo del registro de usuarios, me centr\'e en los m\'etodos correspondientes a la creaci\'on de los perfiles de cada universidad, as\'i como el dise\~no de los distintos formularios para los distintos temas a registrar en la base de datos.\\
+\subsection{Creación de perfiles de universidades}
+Ya implementado el método del registro de usuarios, me centré en los métodos correspondientes a la creación de los perfiles de cada universidad, así como el diseño de los distintos formularios para los distintos temas a registrar en la base de datos.\\
 
 \begin{figure}[htbp]
 	
@@ -142,7 +143,7 @@ Ya implementado el m\'etodo del registro de usuarios, me centr\'e en los m\'etod
 	
 \end{figure}
 
-Al igual que con los perfiles de usuarios, los perfiles de las universidades tambi\'en son editables a elecci\'on del usuario, siempre y cuando sea de una manera constructiva para la comunidad erasmus (\textit{\nameref{fig:formBasic}}) y (\textit{\nameref{fig:formInfo}}).\\
+Al igual que con los perfiles de usuarios, los perfiles de las universidades también son editables a elección del usuario, siempre y cuando sea de una manera constructiva para la comunidad Erasmus (\textit{\nameref{fig:formBasic}}) y (\textit{\nameref{fig:formInfo}}).\\
 
 \begin{figure}[htbp]
 	
@@ -157,30 +158,30 @@ Al igual que con los perfiles de usuarios, los perfiles de las universidades tam
 	
 	\centering
 	\includegraphics[scale=0.4]{./Figuras/tuerasmusPages/privatePages/formInfo.png}
-	\caption{Formulario de la informaci\'on de la universidad}
+	\caption{Formulario de la información de la universidad}
 	\label{fig:formInfo}
 	
 \end{figure}
 
 \section{Arquitectura general}
-La aplicaci\'on consta de una base de datos, donde se almacena toda la informaci\'on referente a la aplicaci\'on y diversas p\'aginas web. En primer lugar, cuando arrancamos la aplicaci\'on nos encontramos con la interfaz p\'ublica, cuya p\'agina inicial tiene una barra de navegaci\'on que nos permite navegar, como su propio nombre indica, por las distintas p\'aginas que forman la web \textbf{TuErasmus} e incluso poder iniciar sesi\'on.\\ 
+La aplicación consta de una base de datos, donde se almacena toda la información referente a la aplicación y diversas páginas web. En primer lugar, cuando arrancamos la aplicación nos encontramos con la interfaz pública, cuya página inicial tiene una barra de navegación que nos permite navegar, como su propio nombre indica, por las distintas páginas que forman la web \textbf{TuErasmus} e incluso poder iniciar sesión.\\ 
 
 \textit{\nameref{fig:navbar}}.\\
 \begin{figure}[htbp]
 	
 	\centering
 	\includegraphics[scale=0.4]{./Figuras/tuerasmusPages/navbar.png}
-	\caption{Barra de navegaci\'on}
+	\caption{Barra de navegación}
 	\label{fig:navbar}
 	
 \end{figure}
 
-\textit{\nameref{fig:index}}, apreciamos un button en verde que nos redirige hacia la interfaz para el registro de usuarios a la web TuErasmus.\\
+\textit{\nameref{fig:index}}, apreciamos un botón en verde que nos redirige hacia la interfaz para el registro de usuarios a la web TuErasmus.\\
 \begin{figure}[htbp]
 	
 	\centering
 	\includegraphics[scale=0.5]{./Figuras/tuerasmusPages/publicPages/index.png}
-	\caption{P\'agina de inicio TuErasmus}
+	\caption{Página de inicio TuErasmus}
 	\label{fig:index}
 	
 \end{figure}
@@ -190,12 +191,12 @@ La aplicaci\'on consta de una base de datos, donde se almacena toda la informaci
 	
 	\centering
 	\includegraphics[scale=0.5]{./Figuras/tuerasmusPages/publicPages/howto.png}
-	\caption{Breve descripci\'on de TuErasmus}
+	\caption{Breve descripción de TuErasmus}
 	\label{fig:howto}
 	
 \end{figure}
 
-P\'agina a la que accedemos a trav\'es del link de la web de la urjc, donde se encuentra toda la informaci\'on correspondiente al programa erasmus (\textit{\nameref{fig:erasmusurjc}}).\\
+Página a la que accedemos a través del enlace de la web de la URJC, donde se encuentra toda la información correspondiente al programa Erasmus (\textit{\nameref{fig:erasmusurjc}}).\\
 \begin{figure}[htbp]
 	
 	\centering
@@ -205,24 +206,24 @@ P\'agina a la que accedemos a trav\'es del link de la web de la urjc, donde se e
 	
 \end{figure}
 
-Una vez registrados y logueados, podremos navegar por las interfaces privadas de la web. Como p\'agina de inicio cuando estemos registrados encontramos una p\'agina donde observaremos una serie de pasos que guiar\'an al nuevo usuario para comenzar a ejecutar los primeros pasos, como registrar su universidad erasmus, comenzar a rellenar los distintos formularios sobre la ciudad, asignaturas, residencias, y dem\'as informaci\'on que nos puede resultar bastante \'util (\textit{\nameref{fig:home}}).\\
+Una vez registrados y \emph{logueados}, podremos navegar por las interfaces privadas de la web. Como página de inicio cuando estemos registrados encontramos una página donde observaremos una serie de pasos que guiarán al nuevo usuario para comenzar a ejecutar los primeros pasos, como registrar su universidad Erasmus, comenzar a rellenar los distintos formularios sobre la ciudad, asignaturas, residencias, y demás información que nos puede resultar bastante útil (\textit{\nameref{fig:home}}).\\
 
 \begin{figure}[htbp]
 	
 	\centering
 	\includegraphics[scale=0.5]{./Figuras/tuerasmusPages/privatePages/home.png}
-	\caption{P\'agina de home de la web TuErasmus}
+	\caption{Página de home de la web TuErasmus}
 	\label{fig:home}
 	
 \end{figure}
 
-Tenemos varias maneras de navegar por la web, la primera es la barra de navegaci\'on de lo que es el navegador, desde donde podemos cerrar sesi\'on, ir a nuestro perfil y tambi\'en poder editarlo (\textit{\nameref{fig:navbarSup}}). En el lateral derecho tambi\'en disponemos de una columna de items desde donde podemos navegar en las distintas interfaces de la web, desde los perfiles de los usuarios hasta las distintas ciudades en las que han estado viviendo su experiencia erasmus (\textit{\nameref{fig:navbarDch}}). Y por \'ultimo cuando estemos en el perfil de una universidad tenemos una barra de navegaci\'on que nos permite navegar por los distintos temas documentados de cada universidad, como sus datos, asignaturas, residencias, la ciudad propia de esa universidad (\textit{\nameref{fig:navbarCen}}).\\
+Tenemos varias maneras de navegar por la web, la primera es la barra de navegación de lo que es el navegador, desde donde podemos cerrar sesión, ir a nuestro perfil y también poder editarlo (\textit{\nameref{fig:navbarSup}}). En el lateral derecho también disponemos de una columna de items desde donde podemos navegar en las distintas interfaces de la web, desde los perfiles de los usuarios hasta las distintas ciudades en las que han estado viviendo su experiencia Erasmus (\textit{\nameref{fig:navbarDch}}). Y por último cuando estemos en el perfil de una universidad tenemos una barra de navegación que nos permite navegar por los distintos temas documentados de cada universidad, como sus datos, asignaturas, residencias, la ciudad propia de esa universidad (\textit{\nameref{fig:navbarCen}}).\\
 
 \begin{figure}[htbp]
 	
 	\centering
 	\includegraphics[scale=0.5]{./Figuras/tuerasmusPages/privatePages/navbarSup.png}
-	\caption{Barra de navegaci\'on superior}
+	\caption{Barra de navegación superior}
 	\label{fig:navbarSup}
 	
 \end{figure}
@@ -230,7 +231,7 @@ Tenemos varias maneras de navegar por la web, la primera es la barra de navegaci
 	
 	\centering
 	\includegraphics[scale=0.5]{./Figuras/tuerasmusPages/privatePages/navbarDch.png}
-	\caption{Barra de navegaci\'on lateral derecho}
+	\caption{Barra de navegación lateral derecho}
 	\label{fig:navbarDch}
 	
 \end{figure}
@@ -238,23 +239,23 @@ Tenemos varias maneras de navegar por la web, la primera es la barra de navegaci
 	
 	\centering
 	\includegraphics[scale=0.7]{./Figuras/tuerasmusPages/privatePages/navbarCen.png}
-	\caption{Barra de navegaci\'on con botones}
+	\caption{Barra de navegación con botones}
 	\label{fig:navbarCen}
 	
 \end{figure}
 
-\subsection{Navegaci\'on a trav\'es de los links del lateral derecho}
-Las opciones de navegaci\'on de esta "barra de navegaci\'on" se corresponden con p\'aginas gen\'ericas sobre datos comunes de la web, es decir, que no encontraremos links directos a una secci\'on determinada de una unviersidad, si no que ser\'a el puente de acceso a los datos propios de una universidad.\\
+\subsection{Navegación a través de los enlaces del lateral derecho}
+Las opciones de navegación de esta ``barra de navegación'' se corresponden con páginas genéricas sobre datos comunes de la web, es decir, que no encontraremos enlaces directos a una sección determinada de una universidad, si no que será el puente de acceso a los datos propios de una universidad.\\
 
-Como links interesantes a mencionar encontramos el de \textit{misErasmus} (\textit{\nameref{fig:myEras}}) que recoge todos aquellos usuarios que est\'en registrados en nuestra misma universidad erasmus; \textit{losErasmus} (\textit{\nameref{fig:losEras}}) que recoge a todos los usuarios, agrupados por universidades; \textit{miUniversidad} (\textit{\nameref{fig:myUni}}) donde encontraremos un link directo al perfil de nuestra universidad (en la que pronto cursaremos nuestro programa erasmus o ya cursamos anteriormente el programa erasmus); \textit{lasUniversidades} (\textit{\nameref{fig:unis}}) donde veremos un listado de universidades, agrupadas por becas erasmus o becas mundus.\\
+Como enlaces interesantes a mencionar encontramos el de \textit{misErasmus} (\textit{\nameref{fig:myEras}}) que recoge todos aquellos usuarios que estén registrados en nuestra misma universidad Erasmus; \textit{losErasmus} (\textit{\nameref{fig:losEras}}) que recoge a todos los usuarios, agrupados por universidades; \textit{miUniversidad} (\textit{\nameref{fig:myUni}}) donde encontraremos un enlace directo al perfil de nuestra universidad (en la que pronto cursaremos nuestro programa Erasmus o ya cursamos anteriormente el programa Erasmus); \textit{lasUniversidades} (\textit{\nameref{fig:unis}}) donde veremos un listado de universidades, agrupadas por becas Erasmus o becas Mundus.\\
 
-Como \'ultima secci\'on de esta parte lateral, tenemos tres enlaces que nos redirigen a una p\'agina de asignaturas gen\'ericas (\textit{\nameref{fig:asig}}), no espec\'ificas de una universidad, otro enlace a las diversas ciudades (\textit{\nameref{fig:ciud}}) de las universidades erasmus y por \'ultimo otro enlace a las residencias (\textit{\nameref{fig:res}}) de alumnos disponibles.\\
+Como última sección de esta parte lateral, tenemos tres enlaces que nos redirigen a una página de asignaturas genéricas (\textit{\nameref{fig:asig}}), no específicas de una universidad, otro enlace a las diversas ciudades (\textit{\nameref{fig:ciud}}) de las universidades Erasmus y por último otro enlace a las residencias (\textit{\nameref{fig:res}}) de alumnos disponibles.\\
 
 \begin{figure}[htbp]
 	
 	\centering
 	\includegraphics[scale=0.5]{./Figuras/tuerasmusPages/privatePages/myErasmus.png}
-	\caption{P\'agina de mis erasmus}
+	\caption{Página de mis Erasmus}
 	\label{fig:myEras}
 	
 \end{figure}
@@ -262,7 +263,7 @@ Como \'ultima secci\'on de esta parte lateral, tenemos tres enlaces que nos redi
 	
 	\centering
 	\includegraphics[scale=0.5]{./Figuras/tuerasmusPages/privatePages/losErasmus.png}
-	\caption{P\'agina de los erasmus}
+	\caption{Página de los Erasmus}
 	\label{fig:losEras}
 	
 \end{figure}
@@ -270,7 +271,7 @@ Como \'ultima secci\'on de esta parte lateral, tenemos tres enlaces que nos redi
 	
 	\centering
 	\includegraphics[scale=0.5]{./Figuras/tuerasmusPages/privatePages/myUniversity.png}
-	\caption{Listado de universidades seg\'un el pa\'is}
+	\caption{Listado de universidades según el país}
 	\label{fig:myUni}
 	
 \end{figure}
@@ -278,7 +279,7 @@ Como \'ultima secci\'on de esta parte lateral, tenemos tres enlaces que nos redi
 	
 	\centering
 	\includegraphics[scale=0.4]{./Figuras/tuerasmusPages/privatePages/universities.png}
-	\caption{Listado de universidades seg\'un el programa}
+	\caption{Listado de universidades según el programa}
 	\label{fig:unis}
 	
 \end{figure}
@@ -286,7 +287,7 @@ Como \'ultima secci\'on de esta parte lateral, tenemos tres enlaces que nos redi
 	
 	\centering
 	\includegraphics[scale=0.4]{./Figuras/tuerasmusPages/privatePages/asignaturas.png}
-	\caption{P\'agina de las asignaturas}
+	\caption{Página de las asignaturas}
 	\label{fig:asig}
 	
 \end{figure}
@@ -294,7 +295,7 @@ Como \'ultima secci\'on de esta parte lateral, tenemos tres enlaces que nos redi
 	
 	\centering
 	\includegraphics[scale=0.4]{./Figuras/tuerasmusPages/privatePages/ciudades.png}
-	\caption{P\'agina de las ciudades erasmus}
+	\caption{Página de las ciudades Erasmus}
 	\label{fig:ciud}
 	
 \end{figure}
@@ -302,15 +303,15 @@ Como \'ultima secci\'on de esta parte lateral, tenemos tres enlaces que nos redi
 	
 	\centering
 	\includegraphics[scale=0.4]{./Figuras/tuerasmusPages/privatePages/residencias.png}
-	\caption{P\'agina de las residencias}
+	\caption{Página de las residencias}
 	\label{fig:res}
 	
 \end{figure}
 
-\subsection{Navegaci\'on por los botones de los perfiles de universidades}
-En el perfil de cada universidad encontramos cinco botones cada uno correspondiente a un conjunto de informaci\'on. Por ellos podremos navegar por toda la informaci\'on propia de una unviersidad, y modificar y editar los perfiles, los comentarios de nuestro elemento principal, "la universidad".\\
+\subsection{Navegación por los botones de los perfiles de universidades}
+En el perfil de cada universidad encontramos cinco botones cada uno correspondiente a un conjunto de información. Por ellos podremos navegar por toda la información propia de una universidad, y modificar y editar los perfiles, los comentarios de nuestro elemento principal, ``la universidad''.\\
 
-En los perfiles (\textit{\nameref{fig:uniP}}), seg\'un la secci\'on en la que nos encontremos, la informaci\'on vendr\'a distribuida de diferente manera. En el caso de la p\'agina principal del perfil podemos observar un mapa con la localizaci\'on y los datos propios de esa universidad. Si estamos en las secciones de \textit{General} y \textit{Documentaci\'on} (\textit{\nameref{fig:uniI}}) encontramos la informaci\'on ordenada por puntos, con la opci\'on de poder modificar la documentaci\'on. En la secci\'on de las residencias (\textit{\nameref{fig:uniR}}) encontramos de nuevo un mapa con las localizaciones, y como \'ultimas secciones, tenemos las ciudades (\textit{\nameref{fig:uniC}}) y asignaturas (\textit{\nameref{fig:uniA}}) que tendr\'an un aspecto similar a las primeras secciones, y con las mismas posibilidades de modificar la informaci\'on.\\
+En los perfiles (\textit{\nameref{fig:uniP}}), según la sección en la que nos encontremos, la información vendrá distribuida de diferente manera. En el caso de la página principal del perfil podemos observar un mapa con la localización y los datos propios de esa universidad. Si estamos en las secciones de \textit{General} y \textit{Documentación} (\textit{\nameref{fig:uniI}}) encontramos la información ordenada por puntos, con la opción de poder modificar la documentación. En la sección de las residencias (\textit{\nameref{fig:uniR}}) encontramos de nuevo un mapa con las localizaciones, y como últimas secciones, tenemos las ciudades (\textit{\nameref{fig:uniC}}) y asignaturas (\textit{\nameref{fig:uniA}}) que tendrán un aspecto similar a las primeras secciones, y con las mismas posibilidades de modificar la información.\\
 
 \begin{figure}[htbp]
 	
@@ -324,7 +325,7 @@ En los perfiles (\textit{\nameref{fig:uniP}}), seg\'un la secci\'on en la que no
 	
 	\centering
 	\includegraphics[scale=0.5]{./Figuras/tuerasmusPages/privatePages/uniInfo.png}
-	\caption{P\'agina de la informaci\'on de la universidad}
+	\caption{Página de la información de la universidad}
 	\label{fig:uniI}
 	
 \end{figure}
@@ -332,7 +333,7 @@ En los perfiles (\textit{\nameref{fig:uniP}}), seg\'un la secci\'on en la que no
 	
 	\centering
 	\includegraphics[scale=0.5]{./Figuras/tuerasmusPages/privatePages/uniResidencias.png}
-	\caption{P\'agina de las residencias de la universidad}
+	\caption{Página de las residencias de la universidad}
 	\label{fig:uniR}
 	
 \end{figure}
@@ -340,7 +341,7 @@ En los perfiles (\textit{\nameref{fig:uniP}}), seg\'un la secci\'on en la que no
 	
 	\centering
 	\includegraphics[scale=0.5]{./Figuras/tuerasmusPages/privatePages/uniAsignaturas.png}
-	\caption{P\'agina de las asignaturas de la universidad}
+	\caption{Página de las asignaturas de la universidad}
 	\label{fig:uniA}
 	
 \end{figure}
@@ -348,12 +349,12 @@ En los perfiles (\textit{\nameref{fig:uniP}}), seg\'un la secci\'on en la que no
 	
 	\centering
 	\includegraphics[scale=0.5]{./Figuras/tuerasmusPages/privatePages/uniCiudades.png}
-	\caption{P\'agina de las ciudades de la universidad}
+	\caption{Página de las ciudades de la universidad}
 	\label{fig:uniC}
 	
 \end{figure}
 
 \section{Conclusiones}
-Tras este intenso cap\'itulo, agrada bastante ver el resultado final. Cuando comenc\'e a trabajar en este cap\'itulo me empezaron a venir a la mente todos aquellos momentos en los que me atasqu\'e y en los que no sab\'ia como avanzar. Pero investigando por mi cuenta, preguntando a personas con m\'as experiencia que yo y consultando a mi tutor consegu\'i salir exitosa de cualquier problema cr\'itico que he encontrado en el camino.\\
+Tras este intenso capítulo, agrada bastante ver el resultado final. Cuando comencé a trabajar en este capítulo me empezaron a venir a la mente todos aquellos momentos en los que me atasqué y en los que no sabía como avanzar. Pero investigando por mi cuenta, preguntando a personas con más experiencia que yo y consultando a mi tutor conseguí salir exitosa de cualquier problema crítico que he encontrado en el camino.\\
 
-Desde luego, que los conceptos estudiados en la carrera los he afianzado much\'isimo con este maravilloso trabajo. He aprendido a organizar un proyecto para desarrollo de una aplicaci\'on web. Seguramente los errores que he cometido ahora no los cometer\'e en un futuro, no muy lejano.\\
+Desde luego, que los conceptos estudiados en la carrera los he afianzado muchísimo con este maravilloso trabajo. He aprendido a organizar un proyecto para desarrollo de una aplicación web. Seguramente los errores que he cometido ahora no los cometeré en un futuro, no muy lejano.\\

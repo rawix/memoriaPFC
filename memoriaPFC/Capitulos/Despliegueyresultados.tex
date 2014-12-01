@@ -1,13 +1,14 @@
-\chapter{Despliegue y resultados}\label{CAP:Despliegueyresultados}
-A lo largo del desarrollo del proyecto, todo el trabajo ha ca\'ido sobre mi, pero llegados a este punto los aut\'enticos protagonistas son los usuarios, los alumnos de la ETSIT, tanto los que han disfrutado de un programa erasmus como los que no. Y aqu\'i es donde su opini\'on cuenta, ya que ser\'an ellos quienes hagan uso de la aplicaci\'on. Este pen\'ultimo apartado lo dedicaremos a la explicaci\'on de los distintos pasos llevados a cabo para realizar debidamente el despliegue y las pruebas de la aplicaci\'on web.\\
+\chapter{Despliegue y resultados}
+\label{CAP:Despliegueyresultados}
+A lo largo del desarrollo del proyecto, todo el trabajo ha caído sobre mi, pero llegados a este punto los auténticos protagonistas son los usuarios, los alumnos de la ETSIT, tanto los que han disfrutado de un programa Erasmus como los que no. Y aquí es donde su opinión cuenta, ya que serán ellos quienes hagan uso de la aplicación. Este penúltimo apartado lo dedicaremos a la explicación de los distintos pasos llevados a cabo para realizar debidamente el despliegue y las pruebas de la aplicación web.\\
  
-\section{Despliegue de la aplicaci\'on}
-Para llegar al funcionamiento deseado de la aplicaci\'on se han realizado diversas pruebas tanto internas como externas y con una dimensión mayor de usuarios. Para las pruebas externas se han realizado de distinta manera.\\
+\section{Despliegue de la aplicación}
+Para llegar al funcionamiento deseado de la aplicación se han realizado diversas pruebas tanto internas como externas y con una dimensión mayor de usuarios. Para las pruebas externas se han realizado de distinta manera.\\
 
 \subsection{Primera prueba: Servidor local}
-A la vez que se va implementando todo el c\'odigo de la aplicaci\'on, se van ejecutando una serie de pruebas, para ir depurando pequeños bloques de funcionalidades. Estas pruebas se realizan lanzando un servidor local con el que podemos simular una navegación por internet. El navegador lanzará peticiones HTTP al servidor, el cu\'al ir\'a mostr\'andole la informaci\'ón que el cliente le pida.\\
+A la vez que se va implementando todo el código de la aplicación, se van ejecutando una serie de pruebas, para ir depurando pequeños bloques de funcionalidades. Estas pruebas se realizan lanzando un servidor local con el que podemos simular una navegación por internet. El navegador lanzará peticiones HTTP al servidor, el cuál irá mostrándole la informaci\'ón que el cliente le pida.\\
 
-En primer lugar, para poder observar correr una p\'agina Django con el servidor de pruebas sin la necesidad de lenvantar un servidor \textit{Apache} y configurarlo con python... basta con ejecutar la siguiente l\'inea en una \textbf{shell Unix} \textit{manage.py runserver}. Si no se le indica ninguna IP ni puerto al lanzar el servidor de python, dicho servidor se ata a la IP local (\textit{localhost} o 127.0.0.1) y a un puerto cualquiera, que por defecto python toma el puerto de escucha 8000.\\
+En primer lugar, para poder observar correr una página Django con el servidor de pruebas sin la necesidad de levantar un servidor \textit{Apache} y configurarlo con python... basta con ejecutar la siguiente línea en una \textbf{shell Unix} \textit{manage.py runserver}. Si no se le indica ninguna IP ni puerto al lanzar el servidor de python, dicho servidor se ata a la IP local (\textit{localhost} o 127.0.0.1) y a un puerto cualquiera, que por defecto python toma el puerto de escucha 8000.\\
 
 \begin{figure}[htbp]
 	
@@ -18,19 +19,19 @@ En primer lugar, para poder observar correr una p\'agina Django con el servidor 
 	
 \end{figure}
 
-Con estas pruebas, servidor local, se ha depurado m\'as del 80\% del c\'odigo. Pudiendo avanzar con el desarrollo de la aplicaci\'on, y poder realizar las pautas necesarias para las siguientes pruebas del despliegue de la herramienta web.\\
+Con estas pruebas, servidor local, se ha depurado más del 80\% del código. Pudiendo avanzar con el desarrollo de la aplicación, y poder realizar las pautas necesarias para las siguientes pruebas del despliegue de la herramienta web.\\
 
 \subsection{Segunda prueba: Servidor local con acceso a Internet}
-Esta segunda prueba, que consideramos el primer despliegue con unas dimensiones mayores de la aplicaci\'on fue el momento clave para saber si a los usuarios les resultaba \'util o no algunos requisitos de la aplicaci\'on web.\\
+Esta segunda prueba, que consideramos el primer despliegue con unas dimensiones mayores de la aplicación fue el momento clave para saber si a los usuarios les resultaba útil o no algunos requisitos de la aplicación web.\\
 
-En esta ocasi\'on se pretend\'ia lanzar el propio servidor que ven\'ia instalado con Django, pero abriendo un puerto a Internet, es decir, poder llegar a este servidor desde cualquier m\'aquina ajena a nuestra red dom\'stica. Para ello al lanzar el servidor de Django debemos indicarle el puerto y la IP en las que el servidor estar\'a escuchando. En una \textbf{shell Unix} ejecutamos \textit{manage.py runserver 192.168.1.129:8000}.\\
+En esta ocasión se pretendía lanzar el propio servidor que venía instalado con Django, pero abriendo un puerto a Internet, es decir, poder llegar a este servidor desde cualquier máquina ajena a nuestra red dom\'stica. Para ello al lanzar el servidor de Django debemos indicarle el puerto y la IP en las que el servidor estará escuchando. En una \textbf{shell Unix} ejecutamos \textit{manage.py runserver 192.168.1.129:8000}.\\
 
-Para acceder a la aplicaci\'on desde un PC o un dispositivo conectado a la LAN de casa o a la WiFi de casa la url que hay que poner en el navegador es \textit{192.168.1.129:8000\tuerasmus}. En cambio, para acceder a la aplicaci\'on web desde un PC o dispositivo m\'ovil proveniente de Internet, totalmente ajeno a nuestra red de casa, la url ser\'a \textit{37.134.69.14:8000\tuerasmus}. Esta IP es la IP p\'ublica de nuestra conexi\'on Internet. Para abrir este puerto a Internet se contact\'o con la compa\~nia telef\'onica, indic\'andoles que abriesen dicho puerto al exterior.\\
+Para acceder a la aplicación desde un PC o un dispositivo conectado a la LAN de casa o a la WiFi de casa la URL que hay que poner en el navegador es \textit{192.168.1.129:8000\\tuerasmus}. En cambio, para acceder a la aplicación web desde un PC o dispositivo móvil proveniente de Internet, totalmente ajeno a nuestra red de casa, la URL será \textit{37.134.69.14:8000\\tuerasmus}. Esta IP es la IP pública de nuestra conexión Internet. Para abrir este puerto a Internet se contactó con la compañía telefónica, indicándoles que abriesen dicho puerto al exterior.\\
 
-El servidor se mantuvo lanzado unas dos semanas, y unos cuantos usuarios estuvieron probando la aplicaci\'on y notific\'andome de los bugs que iban obteniendo durante este periodo de pruebas. Adem\'as de reportarme los bugs que iban encontrando, fue bastante valioso el feedback acerca de la funcionalidad de la aplicaci\'on y de posibles mejores que se podr\'ian aplicar.\\
+El servidor se mantuvo lanzado unas dos semanas, y unos cuantos usuarios estuvieron probando la aplicación y notificándome de los \emph{bugs} que iban obteniendo durante este periodo de pruebas. Además de reportarme los \emph{bugs} que iban encontrando, fue bastante valioso el \emph{feedback} acerca de la funcionalidad de la aplicación y de posibles mejores que se podrían aplicar.\\
 
 \subsection{Alojamiento web}
-Como \'ultimo y definitivo m\'etodo de despliegue se hizo uso de hosting. Se eligi\'o la web de \textbf{Alwaysdata}, que permite el despliegue de aplicaciones web implementadas en Django (python), con lo que no hay que hacer ninguna instalaci\'on. El servidor que tiene integrado es un servidor Apache.\\
+Como último y definitivo método de despliegue se hizo uso de \emph{hosting}. Se eligió la web de \textbf{Alwaysdata}, que permite el despliegue de aplicaciones web implementadas en Django (python), con lo que no hay que hacer ninguna instalación. El servidor que tiene integrado es un servidor Apache.\\
 
 \begin{figure}[htbp]
 	
@@ -41,9 +42,9 @@ Como \'ultimo y definitivo m\'etodo de despliegue se hizo uso de hosting. Se eli
 	
 \end{figure}
 
-Para conseguir un despliegue exitoso, fue necesario conectar mediante conexi\'on ssh desde una \textit{shell Unix} a la cuenta con la que se realizar\'o el despliegue, ejecutando la siguiente l\'inea: \textit{ssh pfctuerasmus@ssh.alwaysdata.com}. De esta manera nos conectamos al directorio home de nuestra cuenta donde deberemos copiar mediante scp un fichero ".zip" que contenga nuestro proyecto completo django:  \textit{scp mypfc.zip pfctuerasmus@ssh.alwaysdata.com: \home\pfctuerasmus\mypfc}.\\
+Para conseguir un despliegue exitoso, fue necesario conectar mediante conexión \texttt{ssh} desde una \textit{shell Unix} a la cuenta con la que se realizó el despliegue, ejecutando la siguiente línea: \textit{ssh pfctuerasmus@ssh.alwaysdata.com}. De esta manera nos conectamos al directorio home de nuestra cuenta donde deberemos copiar mediante \texttt{scp} un fichero \texttt{zip} que contenga nuestro proyecto completo Django:  \textit{scp mypfc.zip pfctuerasmus@ssh.alwaysdata.com: \\home\\pfctuerasmus\\mypfc}.\\
 
-Una vez copiado el zip, debemos descomprimir y realizar unas modificaciones en el directorio que acabamos de copiar del proyecto django. Cuando tengamos descomprimido el fichero .zip, debemos navegar en nuestro proyecto y situarnos en el directorio ra\'iz del proyecto (directorio donde se encuentre el fichero \textit{manage.py}) y crearemos una carpeta llamada \textit{public}, en la que crearemos dos fichero: \textit{django.fcgi} y \textit{.htaccess} que nos permitir\'an mantener lanzada nuestra aplicaci\'on y poder acceder y navegar por ella en cualquier momento.\\
+Una vez copiado el \texttt{zip}, debemos descomprimir y realizar unas modificaciones en el directorio que acabamos de copiar del proyecto Django. Cuando tengamos descomprimido el fichero .zip, debemos navegar en nuestro proyecto y situarnos en el directorio raíz del proyecto (directorio donde se encuentre el fichero \textit{manage.py}) y crearemos una carpeta llamada \textit{public}, en la que crearemos dos fichero: \textit{django.fcgi} y \textit{.htaccess} que nos permitirán mantener lanzada nuestra aplicación y poder acceder y navegar por ella en cualquier momento.\\
 
 \begin{figure}[htbp]
 	
@@ -54,23 +55,23 @@ Una vez copiado el zip, debemos descomprimir y realizar unas modificaciones en e
 	
 \end{figure}
 
-Adem\'as de estos dos ficheros, debemos crear un enlace simb\'olico, para permitir el acceso del admin de Django desde la web de Alwaysdata, y que esta interfaz del admin coja los ficheros est\'aticos de estilo de donde corresponde.\\
+Además de estos dos ficheros, debemos crear un enlace simbólico, para permitir el acceso del admin de Django desde la web de Alwaysdata, y que esta interfaz del admin coja los ficheros estáticos de estilo de donde corresponde.\\
 
-Y con esto se complet\'o el ciclo de las configuraciones para conseguir que la aplicaci\'on est\'e corriendo debidametne desde el hosting.\\
+Y con esto se completó el ciclo de las configuraciones para conseguir que la aplicación esté corriendo debidamente desde el \emph{hosting}.\\
 
 \section{Resultados de las pruebas}
-Una vez desplegada la aplicaci\'on, con el segundo m\'etodo (IP p\'ublica), la reacci\'on de los usuarios fue positiva, pero no tanto como se esper\'o. Por loq ue tuvimos que realizar una serie de mejoras para motivar el uso de la aplicaci\'on web y que los usuarios quedasen satisfechos con los resultados.\\
+Una vez desplegada la aplicación, con el segundo método (IP pública), la reacción de los usuarios fue positiva, pero no tanto como se esperó. Por lo que tuvimos que realizar una serie de mejoras para motivar el uso de la aplicación web y que los usuarios quedasen satisfechos con los resultados.\\
 
-Con el segundo despliegue masivo (alojamiento web) la usabilidad de la aplicaci\'on qued\'o mucho m\'as clara y mejor definida. Con lo que los resultados de este segundo despliegue se acercan m\'as a lo deseado. Como todo periodo de pruebas siempre surgen bugs que se fueron mitigando a medida que fueron apareciendo.\\
+Con el segundo despliegue masivo (alojamiento web) la usabilidad de la aplicación quedó mucho más clara y mejor definida. Con lo que los resultados de este segundo despliegue se acercan más a lo deseado. Como todo periodo de pruebas siempre surgen \emph{bugs} que se fueron mitigando a medida que fueron apareciendo.\\
 
-Por tanto, quedamos satisfechos con los resultados obtenidos. Y tras estas pruebas, el feedback de los usuarios ha sido bastante constructivo ya que se han abierto de esta manera futuras l\'ineas para seguir trabajando en dicho proyecto.\\
+Por tanto, quedamos satisfechos con los resultados obtenidos. Y tras estas pruebas, el \emph{feedback} de los usuarios ha sido bastante constructivo ya que se han abierto de esta manera futuras líneas para seguir trabajando en dicho proyecto.\\
 
 \section{Problemas encontrados}
-Como problemas encontrados en el despliegue de la aplicaci\'on, se ha de mencionar la ausencia de motivaci\'on que ofrec\'ia la aplicaci\'on. Por lo que no se consigui\'o una total satisfacci\'on en cuanto a las pruebas que se deseaban desde un principio.\\
+Como problemas encontrados en el despliegue de la aplicación, se ha de mencionar la ausencia de motivación que ofrecía la aplicación. Por lo que no se consiguió una total satisfacción en cuanto a las pruebas que se deseaban desde un principio.\\
 
-Uno de los bugs que primero surgieron con el segundo m\'etodo de despliegue (hosting) fueron los ficheros est\'aticos de la aplicaci\'on. El path de cada fichero de estilo no era el correcto y por tanto cuando acced\'ias a las p\'aginas de la aplicaci\'on estas eran mostradas con un aspecto nada similar a lo dise\~nado.\\
+Uno de los \emph{bugs} que primero surgieron con el segundo método de despliegue (\emph{hosting}) fueron los ficheros estáticos de la aplicación. El \emph{path} de cada fichero de estilo no era el correcto y por tanto cuando accedías a las páginas de la aplicación estas eran mostradas con un aspecto nada similar a lo diseñado.\\
 
-Una mejora realizada, resultante de este m\'etodo de despliegue, fue aprovechar el cacheo de los ficheros de Javascript (jquery.js) usados en el c\'odigo donde se integraban los mapas de \textit{Google Maps} para la locaclizaci\'on de las universidades y de las residencias. Esto mejorar\'ia el rendimiento de la aplicaci\'on web, ya que se evit\'o tener estos ficheros en local y se ped\'ian directametne desde Internet, con lo que si est\'an con anterioridad cacheados ahorramos tiempo y espacio.\\
+Una mejora realizada, resultante de este método de despliegue, fue aprovechar el cacheo de los ficheros de Javascript (jquery.js) usados en el código donde se integraban los mapas de \textit{Google Maps} para la localización de las universidades y de las residencias. Esto mejoraría el rendimiento de la aplicación web, ya que se evitó tener estos ficheros en local y se pedían directamente desde Internet, con lo que si están con anterioridad cacheados ahorramos tiempo y espacio.\\
 
-Adem\'as de estos dos problemas mencionados en las l\'ineas superiores, se tuvo que solucioanr otro problema relacionado con la configuraci\'on de la aplicaci\'on, ya que constantemente aparec\'ia el mensaje de error "500: \textit{Internal Server Error}", cuya raz\'on era la configuraci\'on err\'onea de la cuenta creada para el despliegue en alwaysdata.\\
+Además de estos dos problemas mencionados en las líneas superiores, se tuvo que solucionar otro problema relacionado con la configuración de la aplicación, ya que constantemente aparecía el mensaje de error \texttt{500: Internal Server Error}, cuya razón era la configuración errónea de la cuenta creada para el despliegue en Alwaysdata.\\
 
