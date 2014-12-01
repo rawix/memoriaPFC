@@ -1,0 +1,243 @@
+\chapter{Estado del arte}\label{CAP:Estadodelarte}
+En los pr\'oximos p\'arrafos, de este segundo cap\'itulo, las distintas tecnolog\'ias usadas para el desarrollo y la implementaci\'on de la aplicaci\'on web ser\'an el tema a tratar.\\
+ 
+\section{Aplicaciones web}\label{SEC:Seccion1}
+
+\begin{figure}[htbp]
+
+    \centering
+    	\includegraphics[scale=0.1]{./Figuras/appweb.jpg}
+    \caption{Aplicaciones web.}
+    \label{fig:appweb}
+    
+\end{figure}
+
+La definici\'on de aplicaci\'on web, en t\'erminos de ingenier\'ia de software, es aquel conjunto de herramientas cuyos usuarios utilizan accediendo a un servidor web a trav\'es de internet mediante el protocolo HTTP.\\
+
+Las aplicaciones web son populares debido a lo pr\'atico que es el uso del navegador web como cliente ligero, a la independencia del sistema operativo, as\'i como a la facilidad para actualizar y mantener aplicaciones web sin distribuir e instalar software a miles de usuarios. Existen aplicaciones como los webmails, wikis, weblogs, tiendas en l\'inea y la propia Wikipedia, que son ejemplos de aplicaciones web.\\
+
+Es importante mencionar que una p\'agina web puede contener elementos que permiten una comunicaci\'on activa entre el usuario y la informaci\'on. Esto permite que el usuario acceda a los datos de modo interactivo, gracias a que la p\'agina responder\'a a cada una de sus acciones, como por ejemplo rellenar y enviar formularios, participar en juegos diversos y acceder a gestores de bases de datos de todo tipo.\\
+
+\section{Django y Python}\label{SEC:Seccion2}
+
+Django es un prominente miembro de una nueva generaci\'on de \textit{web frameworks}. Un framework para aplicaciones web est\'a dise\~nado para apoyar el desarrollo de sitios web din\'amicos, aplicaciones y servicios web. Este tipo de frameworks intenta aliviar el exceso de carga asociado con actividades comunes usadas en desarrollos web.\\
+
+\begin{figure}[htbp]
+
+    \centering
+    	\includegraphics[scale=0.3]{./Figuras/djangoypythonlogo.jpg}
+    \caption{Logo de Django y Python.}
+    \label{fig:djangopython}
+    
+\end{figure}
+
+Django es un framework de desarrollo web escrito en \textit{pyhton} que fomenta el desarrollo r\'apido y el dise\~no limpio y pragm\'atico de c\'odigo abierto. Respeta el paradigma conocido como \textit{Model Template View}. Fue inicialmente desarrollado para gestionar aplicaciones web de p\'aginas orientadas a noticias de \textit{World Company} de Lawrence, y m\'as tarde se liber\'o bajo una licencia BSD en julio de 2005. Dicho framework fue nombrado en nombre del guitarrista de jazz gitano "Django Reinhardt".\\
+
+Tres a\~nos m\'as tarde, se anunci\'o que la \textit{Django Software Foundation}, una fundaci\'on reci\'en formada, se har\'ia cargo de Django en el futuro. La meta fundamental de Django es facilitar la creaci\'on de sitios web complejos. Django pone \'enfasis en el re-uso, la conectividad y extensibilidad de componentes, el desarrollo r\'apido y el principio \textbf{No te repitas} (DRY, \textit{Don't Repeat Yourself}).\\
+
+Python se utiliza en todas las partes del framework, configuraciones, archivos, modelos de datos.\\
+
+\subsubsection{Visi\'on general y caracter\'isticas}
+Los or\'igenes de Django en la administraci\'on de p\'aginas de noticias son evidentes en su dise\~no, ya que proporciona una serie de caracter\'isticas que facilitan el desarrollo r\'apido de p\'aginas orientadas a contenidos. Por ejemplo, en lugar de requerir que los desarrolladores escriban controladores y vistas para las \'areas de administraci\'on de la p\'agina, Django proporciona una aplicaci\'on incorporada para administrar los contenidos, que puede incluirse como parte de cualquier p\'agina hecha con Django y que puede administrar varias p\'aginas hechas con Django a partir de una misma instalaci\'on; la aplicaci\'on administrativa permite la creaci\'on, actualizaci\'on y eliminaci\'on de objetos de contenido, llevando un registro de todas las acciones realizadas sobre cada uno, y proporciona una interfaz para administrar los usuarios y los grupos de usuarios (incluyendo una asignaci\'on detallada de permisos).\\
+
+La distribuci\'on principal de Django tambi\'en aglutina aplicaciones que proporcionan un sistema de comentarios, herramientas para sindicar contenido v\'ia RSS y/o Atom, p\'aginas planas que permiten gestionar p\'aginas de contenido sin necesidad de escribir controladores o vistas para esas p\'aginas, y un sistema de redirecci\'on de URLs.\\ 
+
+\subsubsection{Caracter\'isticas de Django}
+Otras caracter\'isticas de Django, son las que se enumeran a continuaci\'on:
+\begin{itemize}
+\item Un mapeador objeto-racional.
+\item Aplicaciones enchufables que pueden instalarse en cualquier p\'agina gestionada con Django.
+\item Una API de base de datos robusta.
+\item Un sistema incorporado de vistas gen\'ericas que ahorra tener que escribir la l\'ogica de ciertas tareas comunes.
+\item Un sistema extensible de plantillas basado en etiquetas, con herencia de plantillas.
+\item Un despachador de URLs basado en expresiones regulares.
+\item Un sistema \textit{middleware} \footnote[1]{Middleware es un software que asiste a una aplicaci\'on para interactuar o comunicarse con otras aplicaciones, software, redes, hardware y/o sistemas operativos.} para desarrollar caracter\'isticas adicionales; por ejemplo, la distribuci\'on principal de Django incluye componentes middleware que proporcionan cacheo, compresi\'on de la salida, normalizaci\'on de URLs, protecci\'on CSRF y soporte de sesiones.
+\item Soporte de internacionalizaci\'on, incluyendo traducciones incorporadas de la interfaz de administraci\'on.
+\item Documentaci\'on incorporada accesible a trav\'es de la aplicaci\'on administrativa (incluyendo documentaci\'on autom\'aticamente de los modelos y las bibliotecas de plantillas a\~nadidas por las aplicaciones).
+\end{itemize} 
+
+\subsubsection{Arquitectura}
+Aunque Django est\'a fuertemente inspirado en la filosof\'ia de desarrollo MVC, sus desarrolladores declaran p\'ublicamente que no se sienten especialmente atados a observar estrictamente ning\'un paradigma particular, y en cambio prefieren hacer lo que les parece correcto. Como resultado, por ejemplo, lo que se llamar\'ia controlador en un verdadero framework MVC se llama en Django "vista", y lo que se llamar\'ia "vista", se llama plantilla.\\
+
+Gracias al poder de las capas \textit{mediator} y \textit{foundation}, Django permite que los desarrolladores se dediquen a construir los objetos \textit{Entity} y la l\'ogica de presentaci\'on y control para ellos.\\
+
+\section{Tecnolog\'ias web}\label{SEC:Seccion3}
+
+Echando la vista atr\'as, podremos ver c\'omo todo lo relacionado con internet ha evolucionado vertiginosamente, tanto, que la forma de desarrollar e implementar las aplicaciones web ha cambiado considerablemente. En esta evoluci\'on han ido surgiendo nuevas tecnolog\'ias haciendo m\'as sencilla su creaci\'on, y cuya importancia en la actualidad es cada vez m\'as notoria. En los p\'arrafos siguientes se mencionan aquellas que han sido imprescindibles para el desarrollo del proyecto.\\
+
+\subsection{Bootstrap}
+
+\begin{figure}[htbp]
+
+    \centering
+    	\includegraphics[scale=0.5]{./Figuras/bootstraplogo.jpg}
+    \caption{Logo del framework Bootstrap. }
+    \label{fig:bootstrap}  
+    
+\end{figure}
+
+Twitter Bootstrap (o simplemente Bootstrap) es un \textit{framework front-end open source} cuyo objetivo es facilitar el desarrollo de aplicaciones o p\'aginas web. Antes de continuar, debemos aclarar que fue creado por los desarrolladores de Twitter, es decir, Twitter usa Bootstrap, habiendo sido creado precisamente para ser usado en esta red social. En la p\'agina oficial los creadores ofrecen toda la documentaci\'on necesaria para poder modificar todo el dise\~no de la p\'agina o aplicaci\'on, as\'i mismo el framework pone a la disposici\'on del desarrollador una colecci\'on de templates CSS3, HTML5 y plugins Javascript para crear formularios, botones, tablas, barras de navegaci\'on y dem\'as componentes que podemos ver com\'unmente en cualquier sitio web.\\
+
+Actualmente, tiene una gran demanda debido a la creciente presencia que comienza a tener entre las empresas espa\~nolas y a ser algo destacable en los distintos perfiles de desarrolladores.\\
+
+\subsubsection{Por qu\'e usar Bootstrap}
+
+\begin{itemize}
+
+\item La primera ventaja de utilizar Bootstrap literalmente salta a la vista. Podemos hacer que todo se vea realmente m\'as agradable gracias a los estilos que provee el framework. Con s\'olo agregar algunas clases y el \textit{markup} correcto se pueden lograr grupos de botones, barras de navegaci\'on, dropdowns, formularios, etc. 
+\item Es \textit{Cross Browser}, funciona y se ve de la misma manera en la mayor\'ia de los navegadores de escritorio (incluso en \textit{IE7}).
+\item Es \textit{Mobile}. Fue pensado no s\'olo para funcionar en \textit{desktops} sino tambi\'en en dispositivos m\'oviles como celulares o tablets. Por ello fue desarrollado teniendo en mente un dise\~no \textit{responsive} para que cada componente se pueda adaptar a diferentes resoluciones de pantalla. 
+\item Ahorra tiempo. Al tener resuelto todo lo que mencionamos anteriormente podemos enfocarnos en otros aspectos de nuestra aplicaci\'on.
+
+\end{itemize}
+
+\subsection{HTML5}
+
+\textit{HyperText Markup Language} (lenguaje de marcado hipertextual) est\'a basado en etiquetas. Se utiliz\'o por primera vez all\'a por los a\~nos 90, y en un breve periodo de tiempo se extendi\'o y populariz\'o.\\
+
+\begin{figure}[htbp]
+	
+	\centering
+	\includegraphics[scale=0.2]{./Figuras/html5logo.png}
+	\caption{Logo del lenguaje est\'atico HTML5. }
+	\label{fig:html5}    
+	
+\end{figure}
+
+HTML5 es la quinta versi\'on del lenguaje b\'asico de la \textit {World Wide Web, HTML}. Al no ser reconocido en viejas versiones de navegadores por sus nuevas etiquetas y funcionalidades, se recomienda al usuario com\'un actualizar a la versi\'on m\'as nueva para poder disfrutar de todo el potencial que provee HTML5. El desarrollo de este lenguaje de marcado es regulado por el Consorcio W3C.\\
+
+Establece una serie de nuevos elementos y atributos que reflejan el uso t\'ipico de los sitios web modernos. Algunos de ellos son t\'ecnicamente similares a las etiquetas \textit{<div>} y \textit{<span>}, pero tienen un significado sem\'antico, como por ejemplo \textit{<nav>} (bloque de navegaci\'on del sitio web) y \textit{<footer>}. Otros elementos proporcionan nuevas funcionalidades a trav\'es de una interfaz estandarizada, como los elementos de \textit{<audio>} y \textit{<video>}. Introduce el elemento \textit{<canvas>}, capaz de renderizar elementos en 2D y 3D en los navegadores m\'as importantes (Mozilla, Chrome, Opera, Safari e IE).\\
+
+\subsubsection{Novedades de HTML5}
+
+Las novedades de este nuevo lenguaje son:
+
+\begin{itemize}
+
+\item Incorpora etiquetas (canvas 2D y 3D, audio, v\'ideo) con codecs para mostrar los contenidos multimedia. Actualmente hay una lucha entre imponer codecs libres (Web + VP8) o privados (H.264/MPEG-4 AVC).
+\item Introduce etiquetas para manejar grandes conjuntos de datos: \textit{Datagrid}, \textit{Details}, \textit{Menu} y \textit{Command}. Estas etiquetas permiten generar tablas din\'amicas que pueden filtrar, ordenar y ocultar contenido en cliente.
+\item A\~nade mejoras en los formularios. Nuevos tipos de datos (\textit{eMail}, \textit{number}, \textit{url}, \textit{datetime}...) y facilidades para validar el contenido sin JavaScript.
+\item Incluye visores: MathML (f\'ormulas matem\'aticas) y SVG (gr\'aficos vectoriales). En general se deja abierto a poder interpretar otros lenguajes XML.
+\item Agrega \textit{Drag} \& \textit{Drop}. Nueva funcionalidad para arrastrar objectos como im\'agenes.
+
+\end{itemize}
+
+\subsection{CSS3}
+
+\begin{figure}[htbp]
+
+    \centering
+    	\includegraphics[scale=0.3]{./Figuras/css3logo.png}
+    \caption{Logo del lenguaje de estilos CSS3. }
+    \label{fig:css3}
+    
+\end{figure}
+
+\textit{Cascading Style Sheets} u hojas de estilo en cascada en su traducci\'on literal al castellano, es un lenguaje de definici\'on de estilos que se convirti\'o en un est\'andar de la W3C en 1996 por la capacidad de separaci\'on de la apariencia de la p\'agina y su funcionalidad. Pronto se expandi\'o y su uso permiti\'o una mejora significativa en la calidad de las p\'aginas web dado que inicialmente eran pr\'acticamente solo texto y pasaron a ser mucho m\'as llamativas a la vez que f\'aciles de cargar.\\
+
+CSS se utiliza para dar estilo a los diferentes elementos del documento HTML. Entre estos estilos encontramos colores, tama\~nos de las fuentes, posiciones de los elementos en la pantalla, entre otras muchas cosas. Para incluir las diferentes hojas de estilo, se utiliza la etiqueta \textit{style} en el fichero a utilizar con la definci\'on del tipo de documento que estamos enlazando.\\
+
+\subsection{JavaScript}
+
+\begin{figure}[htbp]
+
+    \centering
+    	\includegraphics[scale=0.3]{./Figuras/javaScriptlogo.png}
+    \caption{Logo de JavaScript. }
+    \label{fig:javascript}
+    
+\end{figure}
+
+Javascript es un lenguaje de programaci\'on interpretado, dialecto del est\'andar ECMAScript. Se define como orientado a objetos, basado en prototipos, imperativo, d\'ebilmente tipado y din\'amico.\\
+
+Se utiliza principalmente en su forma del lado del cliente (\textit{client-side}), implementado como parte de un navegador web permitiendo mejoras en la interfaz de usuario y p\'aginas web din\'amicas aunque existe una forma de JavaScript del lado del servidor (\textit{Server-side JavaScript o SSJS}). Su uso en aplicaciones externas a la web, por ejemplo en documentos PDF, aplicaciones de escritorio (mayoritariamente \textit{widgets}) es tambi\'en significativo.\\
+
+JavaScript se dise\~n\'o con una sintaxis similar al lenguaje C, aunque adopta nombres y convenciones del lenguaje de programaci\'on Java. Sin embargo, Java y JavaScript no est\'an relacionados y tienen sem\'anticas y prop\'ositos diferentes.\\
+
+Todos los navegadores modernos interpretan el c\'odigo JavaScript integrado en las p\'aginas web. Para interactuar con una p\'agina web se provee al lenguaje JavaScript de una implementaci\'on del DOM, \textit{Document Object Model}.\\
+
+Tradicionalmente se ven\'ia utilizando en p\'aginas web HTML para realizar operaciones y \'unicamente en el marco de la aplicaci\'on cliente, sin acceso a funciones del servidor. JavaScript se interpreta en el agente usuario, al mismo tiempo que las sentencias van descarg\'andose junto con el c\'odigo HTML. Una cuarta edici\'on est\'a en desarrollo e incluir\'a nuevas caracter\'isticas tales como paquetes, espacio de nombres y definici\'on expl\'icita de clases.\\
+
+\section{API Google Maps}\label{SEC:Seccion4}
+
+\begin{figure}[htbp]
+    \centering
+    	\includegraphics[scale=0.3]{./Figuras/apigmaps.png}
+    \caption{Logo de Google Maps. }
+    \label{fig:googlemaps}
+\end{figure}
+
+Google Maps es un servidor de aplicaciones de mapas en la web que pertenece a Google. Ofrece im\'agenes de mapas desplazables, as\'i como fotograf\'ias por sat\'elite del mundo e incluso la ruta entre diferentes ubicaciones o im\'agenes a pie de calle \textit{Google Street View}. Desde el 6 de cotubre de 2005, Google Maps es parte de Google Local.\\
+
+Existe una variante a nivel entorno de escritorio llamada Google Earth que ofrece Google tambi\'en de forma gratuita. En 2014, los documentos filtrados por Edward Snowden revelaron que Google Maps es parte y v\'ictima del entramado de vigilancia mundial operado por varias agencias de inteligencia occidentales y empresas tecnol\'ogicas.\\
+
+\subsubsection{Desarrollo}
+Google Maps fue anunciado por primera vez en Google Blog el 8 de febrero de 2005. Originalmente soportar\'ia solo a los usuarios de Internet Explorer y Mozilla Firefox, pero el soporte para Opera y Safari fue agregado el 25 de febrero de 2005. El software estuvo en fase beta durante seis meses, antes de convertirse en parte de Google Local, el 6 de octubre de 2005.\\
+
+Como en las aplicaciones web de Google, se usan un gran n\'umero de archivos JavaScript para crear Google Maps. Como el usuario puede mover el mapa, la visualizaci\'on del mismo se baja desde el servidor. Cuando un usuario busca un negocio, la ubicaci\'on es marcada por un indicador en forma de pin, el cual es una imagen PNG transparente sobre el mapa. Para lograr la conectividad sin sincron\'ia con el servidor, Google aplic\'o el uso de AJAX\footnote[1]{T\'ecnica de desarrollo web para crear aplicaciones interactivas o RIA. Estas aplicaciones se ejecutan en el cliente (o navegador) mientras se mantiene la comunicaci\'on as\'incrona con el servidor en segundo plano.} dentro de esta aplicaci\'on.\\
+
+
+\section{Tecnolog\'ias secundarias}\label{SEC:Seccion5}
+Adem\'as de las tecnolog\'ias mencionadas, se han querido utilizar otras tecnolog\'ias que mejoran y facilitan el desarrollo del proyecto.\\
+
+\subsection{Git}
+
+\begin{figure}[htbp]
+    \centering
+    	\includegraphics[scale=0.5]{./Figuras/gitlogo.png}
+    \caption{Logo de Git.}
+    \label{fig:git}
+\end{figure}
+
+Git es un software de control de versiones dise\~nado por \textit{Linus Torvalds}, pensando en la eficiencia y la confiabilidad del mantenimiento de versiones de aplicaciones cuando \'estas tienen un gran n\'umero de archivos de c\'odigo fuente. Al principio, Git se pens\'o como un motor de bajo nivel sobre el cual otros pudieran escribir la interfaz de usuario o \textit{front-end} como Cogito o StGIT. Sin embargo, Git se ha convertido desde entonces en un sistema de control de versiones con funcionalidad plena. Hay algunos proyectos de mucha relevancia que usan Git, en particular, el grupo de programaci\'on del n\'ucleo Linux.\\
+
+\subsubsection{Caracter\'isticas}
+
+El dise\~no de Git se bas\'o en \textit{BitKeeper} y en \textit{Monotone} \footnote[2]{Sistemas de control distribuido de versiones para el c\'odigo fuente de los programas.}. El dise\~no resulta de la experiencia del desarrollador de Linux, \textit{Linux Torvalds}, manteniendo una enorme cantidad de c\'odigo distribuida y gestionada por mucha gente, que incide en numerosos detalles de rendimiento, y de la necesidad de rapidez en una primera implementaci\'on.\\
+
+Entre las caracter\'isticas m\'as relevantes se encuentran:
+
+\begin{itemize}
+
+\item Fuerte apoyo al desarrollo no lineal, por ende, rapidez en la gesti\'on de ramas y mezclado de diferentes versiones. Git incluye herramientas espec\'ificas para navegar y visualizar un historial de desarrollo no lineal.
+\item Gesti\'on distribuida. Al igual que \textit{Darcs}, \textit{Bitkeeper}, \textit{Mercurial}, \textit{SVK}, \textit{Bazaar} y \textit{Monotone}, Git le da a cada programador una copia local del historial del desarrollo entero, y los cambios se propagan entre los repositorios locales. 
+\item Los almacenes de informaci\'on pueden publicarse por HTTP, FTP, rsync o mediante un protocolo nativo, ya sea a trav\'es de una conexi\'on TCP/IP simple o a trav\'es de cifrado SSH. Git tambi\'en puede emular servidores CVS, lo que habilita el uso de clientes CVS pre-existentes y m\'odulos IDE para CVS pre-existentes en el acceso de repositorios Git.
+\item Los repositorios subversion y svk se pueden usar directamente con git-svn.
+\item Gesti\'on eficiente de proyectos grandes, dada la rapidez de gesti\'on de diferencias entre archivos, entre otras mejoras de optimizaci\'on de velocidad de ejecuci\'on.
+\item Realmacenamiento peri\'odico en paquetes (ficheros).
+
+\end{itemize}
+
+Tras la decisi\'on de hacer uso de \textit{Git}, se tuvo que buscar un servidor donde poder alojar nuestro repositorio \textit{Git}. Entre los distintos servidores existentes se eligi\'o \textbf{GitHub}, excelente servicio de alojamiento de repositorios de \textit{software} con este sistema. \textit{GitHub} es el servicio elegido por proyectos de software libre como \textit{jQuery}, \textit{node.js}, \textit{Redis}, \textit{Ruby on Rails}. Adem\'as, algunas de las grandes empresas de Internet como Facebook alojan ah\'i sys desarrollos p\'ublicos, como el SDK, librer\'ias, etc.
+
+\subsection{Alojamiento Web}
+El alojamiento web (o \textit{web hosting}) es el servicio que provee a los usuarios de internet un sistema para poder almacenar informaci\'on, im\'agenes, v\'ideo o cualquier contenido accesible v\'ia web. Es una analog\'ia de "hospedaje o alojamiento en hoteles o habitaciones" donde uno ocupa un lugar espec\'ifico, en este caso la analog\'ia alojamiento web o alojamiento de p\'aginas web, se refiere al lugar que ocupa una p\'agina web, sitio web, sistema, correo electr\'onico, archivos... en internet o m\'as espec\'ificamente en un servidor que por lo general hospeda varias aplicaciones o p\'aginas web.\\
+
+Las compa\~n\'ias que proporcionan espacio de un servidor a sus clientes se suelen denominar con el t\'ermino en ingl\'es \textit{web host}.\\
+
+El uso m\'as t\'ipico de un hosting es crear un sitio web, que en realidad no es m\'as que un conjunto de ficheros en hormato HTML que son las p\'aginas web, pero tambi\'en puedes usar tu hosting simplemente para permitir la descarga de cualquier otra cosa (documentos PFC, ficheros MP3, de audio, v\'ideo, etc).\\
+
+Aparte de los servicios b\'asicos de alojamiento de fichero, un servicio de hosting incluye otros servicios de mucho valor a\~nadido. Entre ellos los m\'as importantes son:
+
+\begin{itemize}
+\item Un servidor de correo electr\'onico que permite que tengas cuentas de correo con tu propio nombre de dominio.
+\item Alojamiento de aplicaciones web basadas en PHP y bases de datos para crear webs generalistas, blogs, tiendas online o foros de discusi\'on.
+\item Acceso v\'ia FTP para almacenar y descargar ficheros.
+\item Crear discos virtuales, es decir, crear almacenamiento en la nube con tu propio servicio de hosting al que accedes como si lo tuvieras en tu ordenador.
+\end{itemize}
+
+\subsubsection{Alwaysdata}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[scale=0.5]{./Figuras/alwaysdatalogo.jpg}
+	\caption{Logo de Alwaysdata.}
+	\label{fig:alwaysdata}
+\end{figure}
+
+Alwaysdata, es una \textit{website} para \textit{Web Hosting}, alojamiento web. Permite alojar aplicaciones web desarrolladas en Django y Python. Su atractivo es debido a que permite el alojamiento gratuito de aplicaciones. Pero este alojamiento gratuito es limitado en comparaci\'on al alojamiento de pago.\\
+
+
+
+
+
+
