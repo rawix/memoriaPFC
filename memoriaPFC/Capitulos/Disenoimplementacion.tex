@@ -3,6 +3,7 @@
 En este capítulo se comentarán los aspectos más relevantes del diseño e implementación del sistema realizado, siendo la parte central de esta memoria.\\ 
 
 \section{Introducción}
+\label{SEC:Seccion31}
 En ingeniería del software el término fases del desarrollo expresa cómo ha progresado el desarrollo de un software y cuánto desarrollo ha sido requerido. Cada versión importante de un producto pasa generalmente a través de una etapa en la que se agregan las nuevas características (etapa alfa), después una etapa donde se eliminan errores activamente (etapa beta), y finalmente una etapa donde se han quitado todos los \textit{bugs}\footnote{\textit{Bug} es un error de software que desencadena un resultado indeseado.} importantes (etapa estable). Las etapas intermedias pueden también ser reconocidas.\\
 
 Las etapas se pueden anunciar y regular formalmente por los desarrolladores del producto, pero los términos se utilizan a veces de manera informal para describir el estado de un producto. Normalmente muchas compañías usan nombres en clave para las versiones antes del lanzamiento de un producto, aunque el producto y las características reales son raramente secretas.\\
@@ -19,6 +20,7 @@ Las etapas se pueden anunciar y regular formalmente por los desarrolladores del 
 Para comenzar un proyecto en ingeniería de software, debemos saber de manera clara qué necesidades se pretenden cubrir con el resultado final. De igual modo, para el desarrollo de este tipo de proyectos se realizan una serie de tareas entre la idea inicial y el producto final. Ese desarrollo sigue una determinada metodología o modelo de desarrollo, el cual establece el orden en el que se llevan a cabo las tareas en el proyecto y provee de requisitos de entrada y salida para cada una de las actividades.\\
 
 \section{Modelo de desarrollo}
+\label{SEC:Seccion32}
 En ingeniería del software el desarrollo en cascada o modelo en cascada\footnote{Denominado así por la posición de las fases en el desarrollo de esta, que parecen caer en cascada ``por gravedad'' hacia las siguientes fases}, es el enfoque metodológico que ordena rigurosamente las etapas del proceso para el desarrollo de software, de tal forma que el inicio de cada etapa debe esperar a la finalización de la etapa anterior. Al final de cada etapa, el modelo está diseñado para llevar a cabo una revisión final, que se encarga de determinar si el proyecto está listo para avanzar a la siguiente fase. Este modelo fue el primero en originarse y es la base de todos los demás modelos de ciclo de vida.\\
 
 La versión original fue propuesta por \textit{Winston W. Royce} en 1970 y posteriormente revisada por \textit{Barry Boehm} en 1980 e \textit{Ian Sommerville} en 1985. Un ejemplo de una metodología de desarrollo en cascada es:
@@ -40,16 +42,9 @@ De esta forma, cualquier error de diseño detectado en la etapa de prueba conduce
 Como ya se explicó en episodios anteriores, el fin de la aplicación web \texttt{TuErasmus}, es la de una web colaborativa para alumnos de la ETSIT, y donde esté a su disposición toda la información necesaria de manera fácil, rápida y sencilla de todas las universidades que forman parte del programa Erasmus. Por tanto, comenzamos por estudiar y analizar qué cosas hay que tener en cuenta para el desarrollo, y a definir los distintos módulos que debemos implementar, diseñando cuidadosamente el sistema, tanto para la parte del servidor como para la parte del cliente.\\  
 
 \section{Objetivos}
+\label{SEC:Seccion33}
 Para poder llevar a cabo el desarrollo de la aplicación, en primer lugar se deben definir una serie de objetivos que darán nombre a los hitos que se irán cumpliendo gradualmente para llegar al conjunto final.\\
 
-\subsubsection{Conocimientos adquiridos}
-Este proyecto puede tomarse como una manera de profundizar y adquirir conocimientos en las nuevas tecnologías de desarrollo de aplicaciones web. Dichas tecnologías son el presente y el futuro cercano del desarrollo web, por lo que tener una base sólida de cara a entrar en el mercado laboral resulta un objetivo primordial.\\
-
-En primer lugar, quería obtener una experiencia mayor con el desarrollo web usando tecnologías vistas superficialmente en la carrera, así como aprender e investigar sobre nuevas tecnologías. Una vez realizado el apartado de la documentación de todos los recursos que iba a usar me dediqué a definir el diseño y páginas que compondrían la aplicación web, ¿cuáles serían las páginas públicas?¿cuáles serían las páginas privadas?, ¿qué tipo de información se iba a gestionar?, y ¿a qué tipo de usuarios estaba dirigida la aplicación web?\\
-
-Con unas respuestas coherentes y razonables a todas las preguntas lanzadas comencé a sumergirme en el mundo de la programación, de los métodos, de las variables locales y globales... de todo aquello que te envuelve a la hora de programar.\\
-
-\subsubsection{Requisitos}
 El proyecto debía cumplir ciertos requisitos básicos, que enumero a continuación.
 
 \begin{itemize}
@@ -61,6 +56,8 @@ El proyecto debía cumplir ciertos requisitos básicos, que enumero a continuación
 \end{itemize}
 
 \section{Etapas del desarrollo}
+\label{SEC:Seccion34}
+
 \subsection{Documentación}
 Como primera etapa de desarrollo, como en cualquier proyecto, lo que se debe hacer para comenzar a trabajar en un proyecto es documentarse sobre las herramientas y tecnologías que se quieran usar. Esta etapa me llevó su tiempo, ya que muchas de las tecnologías usadas no las conocía en profundidad, por lo que tuve que hacer un estudio específico de varios conceptos. Una vez revisada la documentación comencé a definir el esqueleto de lo que sería mi aplicación web.\\
 
@@ -80,21 +77,23 @@ Además de estas tablas, que son las más importantes, existen otras que recogen d
 \subsection{Creación del registro de usuarios}
 \textbf{TuErasmus} iba tomando la forma de una comunidad de estudiantes Erasmus. Por lo que esto implicaba un control de usuarios de la aplicación web. De este modo comienza a implementarse la parte del registro, login y logout de los miembros de la web.\\
 
+La figura \textbf{\ref{fig:regUsu}} muestra la página para que los usuarios puedan registrarse.\\
+
 \begin{figure}[htbp]
 	
 	\centering
-	\includegraphics[scale=0.5]{./Figuras/tuerasmusPages/publicPages/register.png}
+	\includegraphics[scale=0.4]{./Figuras/tuerasmusPages/publicPages/register.png}
 	\caption{Registro de usuarios}
 	\label{fig:regUsu}
 	
 \end{figure}
 
-En caso de introducir correctamente o erróneamente los datos en el formulario del registro nos aparecen unos mensajes indicando si hemos conseguido el registro de manera exitosa.\\
+En caso de introducir correctamente o erróneamente los datos en el formulario del registro nos aparecen unos mensajes indicando si hemos conseguido el registro de manera exitosa o no. En la figura \textbf{\ref{fig:errRegUsu}} observamos la página que vería el usuario en caso de introducir datos erróneos en el formulario de registro. En la figura \textbf{\ref{fig:sucRegUsu}} observamos el mensaje que obtiene un usuario que se acaba de registrar, y cuyos datos introducidos en el formulario son correctos.\\
 
 \begin{figure}[htbp]
 	
 	\centering
-	\includegraphics[scale=0.5]{./Figuras/tuerasmusPages/publicPages/errorRegister.png}
+	\includegraphics[scale=0.4]{./Figuras/tuerasmusPages/publicPages/errorRegister.png}
 	\caption{Error registro de usuario}
 	\label{fig:errRegUsu}
 	
@@ -103,18 +102,18 @@ En caso de introducir correctamente o erróneamente los datos en el formulario de
 \begin{figure}[htbp]
 	
 	\centering
-	\includegraphics[scale=0.5]{./Figuras/tuerasmusPages/publicPages/successRegister.png}
+	\includegraphics[scale=0.4]{./Figuras/tuerasmusPages/publicPages/successRegister.png}
 	\caption{Exitoso registro de usuario}
 	\label{fig:sucRegUsu}
 	
 \end{figure}
 
-Los datos que se solicitan en este formulario son el \texttt{nickname} que tendrá ese usuario en la web, el correo electrónico para contactar en caso de ser necesario, si es alumno o profesor, ya que dependiendo de uno u otro, las asignaturas y comentarios serán distintos, si eres chico o chica, sobre todo para la imagen que aparecerá en el perfil inicial del usuario por defecto. Estos datos por supuesto podrán ser modificados desde una de las interfaces de la aplicación donde se facilita un formulario permitiendo la modificación de los perfiles de usuario.\\
+Los datos que se solicitan en este formulario son el \texttt{nickname} que tendrá ese usuario en la web, el correo electrónico para contactar en caso de ser necesario, si es alumno o profesor, ya que dependiendo de uno u otro, las asignaturas y comentarios serán distintos, y si eres chico o chica, para la imagen que aparece en el perfil inicial del usuario por defecto. Estos datos por supuesto podrán ser modificados desde una de las interfaces de la aplicación donde se facilita un formulario permitiendo la modificación de los perfiles de usuario. En la figura \textbf{\ref{fig:profUsu}} observamos cómo se vería el prefil del usuario logueado, donde debajo de sus datos tiene un botón que nos redirige a la interfaz para la modificación de sus datos, y que vemos en la figura \textbf{\ref{fig:editProfUsu}}.\\
 
 \begin{figure}[htbp]
 	
 	\centering
-	\includegraphics[scale=0.5]{./Figuras/tuerasmusPages/privatePages/myProfile.png}
+	\includegraphics[scale=0.4]{./Figuras/tuerasmusPages/privatePages/myProfile.png}
 	\caption{Mi perfil de usuario}
 	\label{fig:profUsu}
 	
@@ -123,7 +122,7 @@ Los datos que se solicitan en este formulario son el \texttt{nickname} que tendr
 \begin{figure}[htbp]
 	
 	\centering
-	\includegraphics[scale=0.5]{./Figuras/tuerasmusPages/privatePages/editProfile.png}
+	\includegraphics[scale=0.4]{./Figuras/tuerasmusPages/privatePages/editProfile.png}
 	\caption{Editar mi perfil de usuario}
 	\label{fig:editProfUsu}
 	
@@ -134,21 +133,23 @@ El hecho de tener que \emph{loguearse} implica tener unos privilegios en cuanto 
 \subsection{Creación de perfiles de universidades}
 Ya implementado el método del registro de usuarios, me centré en los métodos correspondientes a la creación de los perfiles de cada universidad, así como el diseño de los distintos formularios para los distintos temas a registrar en la base de datos.\\
 
+En la figura \textbf{\ref{fig:uniReg}}, observamos cómo sería la interfaz para poder registrar una nueva universidad, Erasmus o munde. Para ello hay un menú desplegable, que muestra un listado de las universidades con las que la URJC tiene convenio. Si la universidad que se busca no se encuentra en este listado, existe la opción de introducir el nombre de esta universidad en un cuadro de texto.\\
+
 \begin{figure}[htbp]
 	
 	\centering
-	\includegraphics[scale=0.4]{./Figuras/tuerasmusPages/privatePages/uniRegister.png}
+	\includegraphics[scale=0.7]{./Figuras/tuerasmusPages/privatePages/uniRegister.png}
 	\caption{Registro de universidades}
 	\label{fig:uniReg}
 	
 \end{figure}
 
-Al igual que con los perfiles de usuarios, los perfiles de las universidades también son editables a elección del usuario, siempre y cuando sea de una manera constructiva para la comunidad Erasmus (\textit{\nameref{fig:formBasic}}) y (\textit{\nameref{fig:formInfo}}).\\
+Al igual que con los perfiles de usuarios, los perfiles de las universidades también son editables a elección del usuario, siempre y cuando sea de una manera constructiva para la comunidad Erasmus. En las figuras siguientes, figura \textbf{\ref{fig:formBasic}}  y figura \textbf{\ref{fig:formInfo}} apreciamos cómo serían dos formularios distintos. Uno es un formulario para los datos de una universidad, tales como la geoposición, ciudad, teléfono de contacto; el otro formulario en uno de los distintos formualrios existentes para registrar información sobre los estudios que se imparten en una determinada universidad.\\
 
 \begin{figure}[htbp]
 	
 	\centering
-	\includegraphics[scale=0.4]{./Figuras/tuerasmusPages/privatePages/formBasic.png}
+	\includegraphics[scale=0.5]{./Figuras/tuerasmusPages/privatePages/formBasic.png}
 	\caption{Formulario de los datos propios de la universidad}
 	\label{fig:formBasic}
 	
@@ -157,16 +158,25 @@ Al igual que con los perfiles de usuarios, los perfiles de las universidades tam
 \begin{figure}[htbp]
 	
 	\centering
-	\includegraphics[scale=0.4]{./Figuras/tuerasmusPages/privatePages/formInfo.png}
+	\includegraphics[scale=0.5]{./Figuras/tuerasmusPages/privatePages/formInfo.png}
 	\caption{Formulario de la información de la universidad}
 	\label{fig:formInfo}
 	
 \end{figure}
 
 \section{Arquitectura general}
-La aplicación consta de una base de datos, donde se almacena toda la información referente a la aplicación y diversas páginas web. En primer lugar, cuando arrancamos la aplicación nos encontramos con la interfaz pública, cuya página inicial tiene una barra de navegación que nos permite navegar, como su propio nombre indica, por las distintas páginas que forman la web \textbf{TuErasmus} e incluso poder iniciar sesión.\\ 
+\label{SEC:Seccion35}
+La aplicación consta de una base de datos, donde se almacena toda la información referente a la aplicación y diversas páginas web. En primer lugar, cuando arrancamos la aplicación nos encontramos con la interfaz pública, cuya página inicial, figura \textbf{\ref{fig:index}}, tiene una barra de navegación en la parte superior de la página, que nos permite navegar, como su propio nombre indica, por las distintas páginas que forman la web \textbf{TuErasmus} e incluso poder iniciar sesión. Esta barra de navegación se muestra en la figura \textbf{\ref{fig:navbar}}. Además de la barra de navegación, vemos un botón verde que nos redirige a la interfaz de registro de usuarios, ya mencionada en líneas superiores.\\ 
 
-\textit{\nameref{fig:navbar}}.\\
+\begin{figure}[htbp]
+	
+	\centering
+	\includegraphics[scale=0.6]{./Figuras/tuerasmusPages/publicPages/index.png}
+	\caption{Página de inicio TuErasmus}
+	\label{fig:index}
+	
+\end{figure}
+
 \begin{figure}[htbp]
 	
 	\centering
@@ -176,48 +186,38 @@ La aplicación consta de una base de datos, donde se almacena toda la información
 	
 \end{figure}
 
-\textit{\nameref{fig:index}}, apreciamos un botón en verde que nos redirige hacia la interfaz para el registro de usuarios a la web TuErasmus.\\
-\begin{figure}[htbp]
-	
-	\centering
-	\includegraphics[scale=0.5]{./Figuras/tuerasmusPages/publicPages/index.png}
-	\caption{Página de inicio TuErasmus}
-	\label{fig:index}
-	
-\end{figure}
+Navegando por la barra de navegación, accedemos a otras páginas que forman esta cara pública de la aplicación web. Algunas de estas páginas son, una sección donde se explica qué es la aplicación web y que podemos ver en la figura \textbf{\ref{fig:howto}}. También hay un link que nos redirige a la sección Erasmus de la web de la URJC, y que observamos en la figura \textbf{\ref{fig:erasmusurjc}}.\\
 
-\textit{\nameref{fig:howto}}.\\
 \begin{figure}[htbp]
 	
 	\centering
-	\includegraphics[scale=0.5]{./Figuras/tuerasmusPages/publicPages/howto.png}
+	\includegraphics[scale=0.7]{./Figuras/tuerasmusPages/publicPages/howto.png}
 	\caption{Breve descripción de TuErasmus}
 	\label{fig:howto}
 	
 \end{figure}
 
-Página a la que accedemos a través del enlace de la web de la URJC, donde se encuentra toda la información correspondiente al programa Erasmus (\textit{\nameref{fig:erasmusurjc}}).\\
 \begin{figure}[htbp]
 	
 	\centering
-	\includegraphics[scale=0.5]{./Figuras/tuerasmusPages/publicPages/erasmusurjc.png}
+	\includegraphics[scale=0.7]{./Figuras/tuerasmusPages/publicPages/erasmusurjc.png}
 	\caption{Apartado de la web de la URJC dedicado al tema Erasmus}
 	\label{fig:erasmusurjc}
 	
 \end{figure}
 
-Una vez registrados y \emph{logueados}, podremos navegar por las interfaces privadas de la web. Como página de inicio cuando estemos registrados encontramos una página donde observaremos una serie de pasos que guiarán al nuevo usuario para comenzar a ejecutar los primeros pasos, como registrar su universidad Erasmus, comenzar a rellenar los distintos formularios sobre la ciudad, asignaturas, residencias, y demás información que nos puede resultar bastante útil (\textit{\nameref{fig:home}}).\\
+Una vez registrados y \emph{logueados}, podremos navegar por las interfaces privadas de la web. Como página de inicio cuando estemos registrados encontramos una página donde observaremos una serie de pasos que guiarán al nuevo usuario para comenzar a ejecutar los primeros pasos, como registrar su universidad Erasmus, comenzar a rellenar los distintos formularios sobre la ciudad, asignaturas, residencias, y demás información que nos puede resultar bastante útil; y que se muestra en la figura \textbf{\ref{fig:home}}.\\
 
 \begin{figure}[htbp]
 	
 	\centering
-	\includegraphics[scale=0.5]{./Figuras/tuerasmusPages/privatePages/home.png}
+	\includegraphics[scale=0.7]{./Figuras/tuerasmusPages/privatePages/home.png}
 	\caption{Página de home de la web TuErasmus}
 	\label{fig:home}
 	
 \end{figure}
 
-Tenemos varias maneras de navegar por la web, la primera es la barra de navegación de lo que es el navegador, desde donde podemos cerrar sesión, ir a nuestro perfil y también poder editarlo (\textit{\nameref{fig:navbarSup}}). En el lateral derecho también disponemos de una columna de items desde donde podemos navegar en las distintas interfaces de la web, desde los perfiles de los usuarios hasta las distintas ciudades en las que han estado viviendo su experiencia Erasmus (\textit{\nameref{fig:navbarDch}}). Y por último cuando estemos en el perfil de una universidad tenemos una barra de navegación que nos permite navegar por los distintos temas documentados de cada universidad, como sus datos, asignaturas, residencias, la ciudad propia de esa universidad (\textit{\nameref{fig:navbarCen}}).\\
+Tenemos varias maneras de navegar por la web, la primera es la barra de navegación que aparece en la parte superior de la página del navegador, desde donde podemos cerrar sesión, ver y editar nuestro perfil. Esta barra de navegación corresponde con la figura \textbf{\ref{fig:navbarSup}}. En el lateral derecho de la página del navegador, disponemos de una columna de items desde donde podemos navegar en las distintas interfaces de la web, desde los perfiles de los usuarios hasta las distintas ciudades en las que han estado viviendo su experiencia Erasmus, y que apreciamos en la figura \textbf{\ref{fig:navbarDch}}. Por último cuando estamos en el perfil de una universidad, tenemos una barra de navegación que nos permite navegar por los distintos temas documentados de cada universidad, como sus datos, asignaturas, residencias, la ciudad propia de esa universidad. Los botones de las distintas secciones de las universidades se observan en la figura \textbf{\ref{fig:navbarCen}}.\\
 
 \begin{figure}[htbp]
 	
@@ -230,7 +230,7 @@ Tenemos varias maneras de navegar por la web, la primera es la barra de navegaci
 \begin{figure}[htbp]
 	
 	\centering
-	\includegraphics[scale=0.5]{./Figuras/tuerasmusPages/privatePages/navbarDch.png}
+	\includegraphics[scale=0.7]{./Figuras/tuerasmusPages/privatePages/navbarDch.png}
 	\caption{Barra de navegación lateral derecho}
 	\label{fig:navbarDch}
 	
@@ -238,7 +238,7 @@ Tenemos varias maneras de navegar por la web, la primera es la barra de navegaci
 \begin{figure}[htbp]
 	
 	\centering
-	\includegraphics[scale=0.7]{./Figuras/tuerasmusPages/privatePages/navbarCen.png}
+	\includegraphics[scale=0.5]{./Figuras/tuerasmusPages/privatePages/navbarCen.png}
 	\caption{Barra de navegación con botones}
 	\label{fig:navbarCen}
 	
@@ -247,9 +247,9 @@ Tenemos varias maneras de navegar por la web, la primera es la barra de navegaci
 \subsection{Navegación a través de los enlaces del lateral derecho}
 Las opciones de navegación de esta ``barra de navegación'' se corresponden con páginas genéricas sobre datos comunes de la web, es decir, que no encontraremos enlaces directos a una sección determinada de una universidad, si no que será el puente de acceso a los datos propios de una universidad.\\
 
-Como enlaces interesantes a mencionar encontramos el de \textit{misErasmus} (\textit{\nameref{fig:myEras}}) que recoge todos aquellos usuarios que estén registrados en nuestra misma universidad Erasmus; \textit{losErasmus} (\textit{\nameref{fig:losEras}}) que recoge a todos los usuarios, agrupados por universidades; \textit{miUniversidad} (\textit{\nameref{fig:myUni}}) donde encontraremos un enlace directo al perfil de nuestra universidad (en la que pronto cursaremos nuestro programa Erasmus o ya cursamos anteriormente el programa Erasmus); \textit{lasUniversidades} (\textit{\nameref{fig:unis}}) donde veremos un listado de universidades, agrupadas por becas Erasmus o becas Mundus.\\
+Como enlaces interesantes a mencionar encontramos el de \textit{misErasmus}, figura \textbf{\ref{fig:myEras}}, que recoge todos aquellos usuarios que estén registrados en nuestra misma universidad Erasmus; \textit{losErasmus}, figura \textbf{\ref{fig:losEras}}, que recoge a todos los usuarios, agrupados por universidades; \textit{miUniversidad}, figura \textbf{\ref{fig:myUni}}, donde encontraremos un enlace directo al perfil de nuestra universidad (en la que pronto cursaremos nuestro programa Erasmus o ya cursamos anteriormente el programa Erasmus); \textit{lasUniversidades}, figura \textbf{\ref{fig:unis}}, donde veremos un listado de universidades, agrupadas por becas Erasmus o becas Mundus.\\
 
-Como última sección de esta parte lateral, tenemos tres enlaces que nos redirigen a una página de asignaturas genéricas (\textit{\nameref{fig:asig}}), no específicas de una universidad, otro enlace a las diversas ciudades (\textit{\nameref{fig:ciud}}) de las universidades Erasmus y por último otro enlace a las residencias (\textit{\nameref{fig:res}}) de alumnos disponibles.\\
+Como última sección de esta parte lateral, tenemos tres enlaces que nos redirigen a una página de asignaturas genéricas, figura \textbf{\ref{fig:asig}}, no específicas de una universidad si no que recoge un listado de todas las universidades existentes en la aplicación web; otro enlace a las diversas ciudades, figura \textbf{\ref{fig:ciud}}, de las universidades Erasmus y por último otro enlace a las residencias, figura \textbf{\ref{fig:res}}, correspondietnes a las distintas unviersidades.\\
 
 \begin{figure}[htbp]
 	
@@ -278,7 +278,7 @@ Como última sección de esta parte lateral, tenemos tres enlaces que nos redirige
 \begin{figure}[htbp]
 	
 	\centering
-	\includegraphics[scale=0.4]{./Figuras/tuerasmusPages/privatePages/universities.png}
+	\includegraphics[scale=0.5]{./Figuras/tuerasmusPages/privatePages/universities.png}
 	\caption{Listado de universidades según el programa}
 	\label{fig:unis}
 	
@@ -286,7 +286,7 @@ Como última sección de esta parte lateral, tenemos tres enlaces que nos redirige
 \begin{figure}[htbp]
 	
 	\centering
-	\includegraphics[scale=0.4]{./Figuras/tuerasmusPages/privatePages/asignaturas.png}
+	\includegraphics[scale=0.5]{./Figuras/tuerasmusPages/privatePages/asignaturas.png}
 	\caption{Página de las asignaturas}
 	\label{fig:asig}
 	
@@ -294,7 +294,7 @@ Como última sección de esta parte lateral, tenemos tres enlaces que nos redirige
 \begin{figure}[htbp]
 	
 	\centering
-	\includegraphics[scale=0.4]{./Figuras/tuerasmusPages/privatePages/ciudades.png}
+	\includegraphics[scale=0.5]{./Figuras/tuerasmusPages/privatePages/ciudades.png}
 	\caption{Página de las ciudades Erasmus}
 	\label{fig:ciud}
 	
@@ -302,7 +302,7 @@ Como última sección de esta parte lateral, tenemos tres enlaces que nos redirige
 \begin{figure}[htbp]
 	
 	\centering
-	\includegraphics[scale=0.4]{./Figuras/tuerasmusPages/privatePages/residencias.png}
+	\includegraphics[scale=0.5]{./Figuras/tuerasmusPages/privatePages/residencias.png}
 	\caption{Página de las residencias}
 	\label{fig:res}
 	
@@ -311,12 +311,14 @@ Como última sección de esta parte lateral, tenemos tres enlaces que nos redirige
 \subsection{Navegación por los botones de los perfiles de universidades}
 En el perfil de cada universidad encontramos cinco botones cada uno correspondiente a un conjunto de información. Por ellos podremos navegar por toda la información propia de una universidad, y modificar y editar los perfiles, los comentarios de nuestro elemento principal, ``la universidad''.\\
 
-En los perfiles (\textit{\nameref{fig:uniP}}), según la sección en la que nos encontremos, la información vendrá distribuida de diferente manera. En el caso de la página principal del perfil podemos observar un mapa con la localización y los datos propios de esa universidad. Si estamos en las secciones de \textit{General} y \textit{Documentación} (\textit{\nameref{fig:uniI}}) encontramos la información ordenada por puntos, con la opción de poder modificar la documentación. En la sección de las residencias (\textit{\nameref{fig:uniR}}) encontramos de nuevo un mapa con las localizaciones, y como últimas secciones, tenemos las ciudades (\textit{\nameref{fig:uniC}}) y asignaturas (\textit{\nameref{fig:uniA}}) que tendrán un aspecto similar a las primeras secciones, y con las mismas posibilidades de modificar la información.\\
+En los perfiles de cada una de las universidades, que podemos apreciar en la figura \textbf{\ref{fig:uniP}}, según la sección en la que queramos navegar, la información vendrá distribuida de diferente manera. En el caso de la página principal del perfil podemos observar un mapa con su  geolocalización y los datos de esa universidad.\\
+
+Pinchando en cada sección encontramos distinta información. Si estamos en las secciones de \textit{General} y \textit{Documentación} encontramos la información ordenada por puntos, con la opción de poder modificar la documentación. Estas secciones se muestran en la figura \textbf{\ref{fig:uniI}}. En la sección de las residencias, que esta representada en la figura \textbf{\ref{fig:uniR}}, vemos de nuevo un mapa con las geolocalizaciones de las distintas residencias que tenga registrada una universidad; y como últimas secciones, tenemos las ciudades, figura \textbf{\ref{fig:uniC}}, y asignaturas, figura \textbf{\ref{fig:uniA}} que tendrán un aspecto similar a las primeras secciones, y con las mismas posibilidades de modificar la información. En el ambos casos, ciudades y asignaturas, si hay varias registradas se muestran por orden, una debajo de la otra con sus comentarios correspondientes.\\
 
 \begin{figure}[htbp]
 	
 	\centering
-	\includegraphics[scale=0.7]{./Figuras/tuerasmusPages/privatePages/uniProfile.png}
+	\includegraphics[scale=0.6]{./Figuras/tuerasmusPages/privatePages/uniProfile.png}
 	\caption{Perfil de universidad}
 	\label{fig:uniP}
 	
@@ -324,7 +326,7 @@ En los perfiles (\textit{\nameref{fig:uniP}}), según la sección en la que nos en
 \begin{figure}[htbp]
 	
 	\centering
-	\includegraphics[scale=0.5]{./Figuras/tuerasmusPages/privatePages/uniInfo.png}
+	\includegraphics[scale=0.6]{./Figuras/tuerasmusPages/privatePages/uniInfo.png}
 	\caption{Página de la información de la universidad}
 	\label{fig:uniI}
 	
@@ -332,7 +334,7 @@ En los perfiles (\textit{\nameref{fig:uniP}}), según la sección en la que nos en
 \begin{figure}[htbp]
 	
 	\centering
-	\includegraphics[scale=0.5]{./Figuras/tuerasmusPages/privatePages/uniResidencias.png}
+	\includegraphics[scale=0.6]{./Figuras/tuerasmusPages/privatePages/uniResidencias.png}
 	\caption{Página de las residencias de la universidad}
 	\label{fig:uniR}
 	
@@ -340,7 +342,7 @@ En los perfiles (\textit{\nameref{fig:uniP}}), según la sección en la que nos en
 \begin{figure}[htbp]
 	
 	\centering
-	\includegraphics[scale=0.5]{./Figuras/tuerasmusPages/privatePages/uniAsignaturas.png}
+	\includegraphics[scale=0.6]{./Figuras/tuerasmusPages/privatePages/uniAsignaturas.png}
 	\caption{Página de las asignaturas de la universidad}
 	\label{fig:uniA}
 	
@@ -348,13 +350,8 @@ En los perfiles (\textit{\nameref{fig:uniP}}), según la sección en la que nos en
 \begin{figure}[htbp]
 	
 	\centering
-	\includegraphics[scale=0.5]{./Figuras/tuerasmusPages/privatePages/uniCiudades.png}
+	\includegraphics[scale=0.6]{./Figuras/tuerasmusPages/privatePages/uniCiudades.png}
 	\caption{Página de las ciudades de la universidad}
 	\label{fig:uniC}
 	
 \end{figure}
-
-\section{Conclusiones}
-Tras este intenso capítulo, agrada bastante ver el resultado final. Cuando comencé a trabajar en este capítulo me empezaron a venir a la mente todos aquellos momentos en los que me atasqué y en los que no sabía como avanzar. Pero investigando por mi cuenta, preguntando a personas con más experiencia que yo y consultando a mi tutor conseguí salir exitosa de cualquier problema crítico que he encontrado en el camino.\\
-
-Desde luego, que los conceptos estudiados en la carrera los he afianzado muchísimo con este maravilloso trabajo. He aprendido a organizar un proyecto para desarrollo de una aplicación web. Seguramente los errores que he cometido ahora no los cometeré en un futuro, no muy lejano.\\
